@@ -22,6 +22,97 @@
     suspense: 'assets/sounds/suspense.wav',
     laugh_track: 'assets/sounds/laugh_track.wav'
   };
+  for (const ch of 'abcdefghijklmnopqrstuvwxyz') {
+    SOUND_ASSET_FILES[`az_${ch}`] = `assets/sounds/az/${ch}.mp3`;
+  }
+
+  // Language-specific A-Z meme packs (English / Hindi A-Z Short / Kannada)
+  const LANG_PACKS = {
+    hi: {
+      A: { label: 'ARE BAAP RE', caption: 'Are Baap Re! 😱', speakHi: 'अरे बाप रे!', asset: 'az_a' },
+      B: { label: 'BAIGAN!', caption: 'Baigan! 🍆', speakHi: 'बैंगन!', asset: 'az_b' },
+      C: { label: 'C SE MEME', caption: 'C Viral Meme! 🔥', speakHi: 'सी से मीम!', asset: 'az_c' },
+      D: { label: 'DUM DUM TA', caption: 'Dum Dum Ta! 🥁', speakHi: 'डम डम ता!', asset: 'az_d' },
+      E: { label: 'AAYEIN?', caption: 'Aayein?! 🤨', speakHi: 'आएँ?', asset: 'az_e' },
+      F: { label: 'F DIALOGUE', caption: 'Viral Dialogue! ⚡', speakHi: 'एफ से मीम!', asset: 'az_f' },
+      G: { label: 'GHAZAR!', caption: 'Ghazar! 😎', speakHi: 'ग़ज़र!', asset: 'az_g' },
+      H: { label: 'HAIN JI?', caption: 'Hain Ji?! 🧐', speakHi: 'हैं जी?', asset: 'az_h' },
+      I: { label: 'MODI JI!', caption: 'Narendra Modi! 🤩', speakHi: 'नरेंद्र मोदी!', asset: 'az_i' },
+      J: { label: 'JALDI HATO', caption: 'Jaldi Wahan Se Hato! 🏃', speakHi: 'जल्दी वहाँ से हटो!', asset: 'az_j' },
+      K: { label: 'KHAZANA!', caption: 'Khazana De Do! 💰', speakHi: 'खज़ाना दे दो!', asset: 'az_k' },
+      L: { label: 'LE LE BETA', caption: 'Le Le Beta! 😂', speakHi: 'ले ले बेटा!', asset: 'az_l' },
+      M: { label: 'MAAREGA!', caption: 'Maarega Mujhe! 🤕', speakHi: 'मारेगा मुझे!', asset: 'az_m' },
+      N: { label: 'NAHI!', caption: 'Nahi! 🙅', speakHi: 'नहीं!', asset: 'az_n' },
+      O: { label: 'OH BHAI!', caption: 'Oh Bhai Maaro Mujhe! 🤯', speakHi: 'ओ भाई मारो मुझे!', asset: 'az_o' },
+      P: { label: 'SAMJHE?', caption: 'Samjhe Kya?! 🤔', speakHi: 'समझे क्या?', asset: 'az_p' },
+      Q: { label: 'KYA HUA?', caption: 'Kyun Kya Hua?! ❓', speakHi: 'क्यों क्या हुआ?', asset: 'az_q' },
+      R: { label: 'RUKO ZARA', caption: 'Ruko Zara Sabar Karo! ✋', speakHi: 'रुको ज़रा सबर करो!', asset: 'az_r' },
+      S: { label: 'SHABASH!', caption: 'Shabash Beta! 👏', speakHi: 'शाबाश बेटा!', asset: 'az_s' },
+      T: { label: 'TAUBA!', caption: 'Tauba Tauba! 🤦', speakHi: 'तौबा तौबा!', asset: 'az_t' },
+      U: { label: 'UTHA LE RE', caption: 'Utha Le Re Baba! 🙏', speakHi: 'उठा ले रे बाबा!', asset: 'az_u' },
+      V: { label: 'VIDEO KYUN', caption: 'Video Kyun Bana Raha Hai! 📹', speakHi: 'वीडियो क्यों बना रहा है!', asset: 'az_v' },
+      W: { label: 'WAH SCENE!', caption: 'Wah Kya Scene Hai! 🌟', speakHi: 'वाह क्या सीन है!', asset: 'az_w' },
+      X: { label: 'PATA NAHI', caption: 'Mujhe Mat Puchho! 🤷', speakHi: 'मुझे मत पूछो!', asset: 'az_x' },
+      Y: { label: 'YE KYA HAI', caption: 'Ye Sab Kya Dekhna Pad Raha Hai! 😭', speakHi: 'ये सब क्या देखना पड़ रहा है!', asset: 'az_y' },
+      Z: { label: 'CHIN TAPAK', caption: 'Chin Tapak Dum Dum! 🕺🔥', speakHi: 'चिन तपाक डम डम!', asset: 'az_z' }
+    },
+    en: {
+      A: { label: 'AMONG US', caption: 'AMONG US?! SUS! 📮', speak: 'Among Us? That is sus!', asset: null },
+      B: { label: 'BRUH!', caption: 'BRUH MOMENT! 💀', speak: 'Bruh moment!', asset: null },
+      C: { label: 'NO CAP!', caption: 'HUGE CAP! 🧢', speak: 'Stop the cap!', asset: null },
+      D: { label: 'DAMN SON', caption: 'DAMN SON, WHERE DID YOU FIND THIS? 😎', speak: 'Damn son, where did you find this?', asset: null },
+      E: { label: 'EMOTIONAL', caption: 'EMOTIONAL DAMAGE! 💔', speak: 'Emotional damage!', asset: null },
+      F: { label: 'F IN CHAT', caption: 'PRESS F TO PAY RESPECTS! 🫡', speak: 'F in the chat!', asset: null },
+      G: { label: 'GG EZ', caption: 'GG EZ NO RE! 🎮', speak: 'G G easy!', asset: null },
+      H: { label: 'HOLD UP!', caption: 'HOLD UP, WAIT A MINUTE! ✋', speak: 'Hold up, wait a minute!', asset: null },
+      I: { label: 'BIG BRAIN', caption: 'IT IS BIG BRAIN TIME! 🧠', speak: 'Big brain time!', asset: null },
+      J: { label: 'JUST DO IT', caption: 'JUST DO IT! 🔥', speak: 'Just do it!', asset: null },
+      K: { label: 'KAREN!', caption: 'KAREN WANTS THE MANAGER! 📢', speak: 'Karen detected!', asset: null },
+      L: { label: 'LET HIM COOK', caption: 'LET HIM COOK! 👨‍🍳🔥', speak: 'Let him cook!', asset: null },
+      M: { label: 'MISSION FAIL', caption: 'MISSION FAILED, NEXT TIME! 🎯', speak: 'Mission failed, we will get them next time!', asset: null },
+      N: { label: 'NO PLEASE', caption: 'NO GOD PLEASE NO! 😱', speak: 'No god, please no!', asset: null },
+      O: { label: 'OH TRIPLE!', caption: 'OH BABY A TRIPLE! 🎯', speak: 'Oh baby a triple!', asset: null },
+      P: { label: 'PLOT TWIST', caption: 'PLOT TWIST! 🎭', speak: 'Plot twist!', asset: null },
+      Q: { label: 'QUIT PLAYIN', caption: 'QUIT PLAYING BRO! 🤨', speak: 'Quit playing!', asset: null },
+      R: { label: 'RICKROLL', caption: 'NEVER GONNA GIVE YOU UP! 🕺', speak: 'You just got rickrolled!', asset: null },
+      S: { label: 'SKILL ISSUE', caption: 'MAJOR SKILL ISSUE! 💀', speak: 'Skill issue!', asset: null },
+      T: { label: 'TO BE CONT', caption: 'TO BE CONTINUED... 🎸', speak: 'To be continued!', asset: null },
+      U: { label: 'UNO REVERSE', caption: 'UNO REVERSE CARD! 🔄', speak: 'Uno reverse card!', asset: null },
+      V: { label: 'VIBE CHECK', caption: 'VIBE CHECK PASSED! 🎶', speak: 'Vibe check passed!', asset: null },
+      W: { label: 'WHAT R THOSE', caption: 'WHAT ARE THOSE?! 👟', speak: 'What are those?', asset: null },
+      X: { label: 'X DOUBT', caption: 'PRESS X TO DOUBT! 🕵️', speak: 'Press X to doubt!', asset: null },
+      Y: { label: 'YEET!', caption: 'YEEEEET! 🚀', speak: 'Yeet!', asset: null },
+      Z: { label: 'ZOOMER', caption: 'ZOOMER ENERGY 9000! ⚡', speak: 'Zoomer energy!', asset: null }
+    },
+    kn: {
+      A: { label: 'AYYO PAAPA', caption: 'ಅಯ್ಯೋ ಪಾಪ! (Ayyo Paapa!) 🥺', speak: 'Ayyo paapaa!', speakKn: 'ಅಯ್ಯೋ ಪಾಪ!', asset: null },
+      B: { label: 'BISI IDLI', caption: 'ಬಿಸಿ ಬಿಸಿ ಇಡ್ಲಿ ಸಾಂಬಾರ್! 🍛', speak: 'Bisi bisi idli!', speakKn: 'ಬಿಸಿ ಬಿಸಿ ಇಡ್ಲಿ!', asset: null },
+      C: { label: 'CHILL MAADI', caption: 'ಚಿಲ್ ಮಾಡಿ ಬಾಸ್! 🧊😎', speak: 'Chill maadi boss!', speakKn: 'ಚಿಲ್ ಮಾಡಿ ಬಾಸ್!', asset: null },
+      D: { label: 'DHOKA GURU', caption: 'ಧೋಖಾ ಆಯ್ತು ಗುರು! 🎭', speak: 'Dhoka aaythu guru!', speakKn: 'ಧೋಖಾ ಆಯ್ತು ಗುರು!', asset: null },
+      E: { label: 'EN GURU?', caption: 'ಏನ್ ಗುರು ಇದು?! 😎💛❤️', speak: 'Yen guru idu?', speakKn: 'ಏನ್ ಗುರು ಇದು?', asset: null },
+      F: { label: 'FULL TIGHT', caption: 'ಫುಲ್ ಟೈಟ್ ಗುರು! 🔥', speak: 'Full tight guru!', speakKn: 'ಫುಲ್ ಟೈಟ್ ಗುರು!', asset: null },
+      G: { label: 'GURU SAKKATH', caption: 'ಗುರು, ಸಕ್ಕತ್ತಾಗಿದೆ! 🤩', speak: 'Guru sakkathagide!', speakKn: 'ಗುರು ಸಕ್ಕತ್ತಾಗಿದೆ!', asset: null },
+      H: { label: 'HOWDA HULI', caption: 'ಹೌದಾ ಹುಲಿಯಾ?! 🐯', speak: 'Howda huliya?', speakKn: 'ಹೌದಾ ಹುಲಿಯಾ?', asset: null },
+      I: { label: 'IDEN KATHE', caption: 'ಇದೇನ್ ಕಥೆ ಗುರು! 🤯', speak: 'Iden kathe guru!', speakKn: 'ಇದೇನ್ ಕಥೆ ಗುರು!', asset: null },
+      J: { label: 'JOLLY MAADU', caption: 'ಜಾಲಿ ಮಾಡು ಮಗಾ! 🎉', speak: 'Jolly maadu maga!', speakKn: 'ಜಾಲಿ ಮಾಡು ಮಗಾ!', asset: null },
+      K: { label: 'KANNADA!', caption: 'ನಮ್ಮ ಬೆಂಗಳೂರು ಕನ್ನಡ ಮೋಡ್! 💛❤️', speak: 'Namma Bengaluru Kannada mode!', speakKn: 'ನಮ್ಮ ಬೆಂಗಳೂರು ಕನ್ನಡ!', asset: null },
+      L: { label: 'LO BOSS!', caption: 'ಲೋ ಬಾಸ್, ಏನ್ ಮಾಡ್ತಿದೀಯಾ! 😂', speak: 'Lo boss yen madthidiya!', speakKn: 'ಲೋ ಬಾಸ್ ಏನ್ ಮಾಡ್ತಿದೀಯಾ!', asset: null },
+      M: { label: 'MAJA BANTHA', caption: 'ಮಜಾ ಬಂತಾ ಗುರು? 🥳', speak: 'Maja bantha guru?', speakKn: 'ಮಜಾ ಬಂತಾ ಗುರು?', asset: null },
+      N: { label: 'NAANU EN?', caption: 'ನಾನು ಏನ್ ಮಾಡಿದೆ?! 🥺👉👈', speak: 'Naanu yen maadide?', speakKn: 'ನಾನು ಏನ್ ಮಾಡಿದೆ?', asset: null },
+      O: { label: 'OH GURU!', caption: 'ಓಹ್ ಗುರು! ಸೂಪರ್! ⚡', speak: 'Oh guru super!', speakKn: 'ಓಹ್ ಗುರು ಸೂಪರ್!', asset: null },
+      P: { label: 'PAKKA LOCAL', caption: 'ಪಕ್ಕಾ ಲೋಕಲ್ ಬಾಸ್! 😎', speak: 'Pakka local boss!', speakKn: 'ಪಕ್ಕಾ ಲೋಕಲ್ ಬಾಸ್!', asset: null },
+      Q: { label: 'QUESTION?', caption: 'ಕ್ವೆಶ್ಚನ್ ಕೇಳ್ಬೇಡ ಗುರು! 🤫', speak: 'Question kelbeda guru!', speakKn: 'ಕ್ವೆಶ್ಚನ್ ಕೇಳ್ಬೇಡ ಗುರು!', asset: null },
+      R: { label: 'RIGHT HELDE', caption: 'ರೈಟ್ ಹೇಳ್ದೆ ಗುರು! ✅', speak: 'Right helde guru!', speakKn: 'ರೈಟ್ ಹೇಳ್ದೆ ಗುರು!', asset: null },
+      S: { label: 'SADHU LAUGH', caption: 'ಸಾಧು ಕೋಕಿಲ ಲಾಫ್: ಹಹಹ! 😂🤣', speak: 'Ha ha ha! Yen comedy!', speakKn: 'ಹ ಹ ಹ! ಏನ್ ಕಾಮಿಡಿ!', asset: 'laugh_track' },
+      T: { label: 'THAGO GURU', caption: 'ತಗೋ ಗುರು ಫುಲ್ ಪವರ್! 💥', speak: 'Thago guru!', speakKn: 'ತಗೋ ಗುರು!', asset: null },
+      U: { label: 'ULTA PULTA', caption: 'ಉಲ್ಟಾ ಹೊಡೀತು ಬಾಸ್! 🙃', speak: 'Ulta hodeethu boss!', speakKn: 'ಉಲ್ಟಾ ಹೊಡೀತು ಬಾಸ್!', asset: null },
+      V: { label: 'WOW SAKKATH', caption: 'ವಾವ್! ಸಕ್ಕತ್ ಡ್ಯಾನ್ಸ್! 🕺', speak: 'Wow sakkath!', speakKn: 'ವಾವ್ ಸಕ್ಕತ್!', asset: null },
+      W: { label: 'WAIT MAADU', caption: 'ವೇಟ್ ಮಾಡು ಬಾಸ್! ✋', speak: 'Wait maadu boss!', speakKn: 'ವೇಟ್ ಮಾಡು ಬಾಸ್!', asset: null },
+      X: { label: 'EXTRA COMEDY', caption: 'ಎಕ್ಸ್‌ಟ್ರಾ ಕಾಮಿಡಿ ಗುರು! 🤣', speak: 'Extra comedy guru!', speakKn: 'ಎಕ್ಸ್‌ಟ್ರಾ ಕಾಮಿಡಿ ಗುರು!', asset: null },
+      Y: { label: 'YAARO NEENU', caption: 'ಯಾರೋ ನೀನು?! 🤨', speak: 'Yaaro neenu?', speakKn: 'ಯಾರೋ ನೀನು?', asset: null },
+      Z: { label: 'JHAGAMAGA', caption: 'ಝಗಮಗ ಡಿಜೆ ನೈಟ್! 🪩✨', speak: 'Jhagamaga DJ night!', speakKn: 'ಝಗಮಗ ಡಿಜೆ ನೈಟ್!', asset: null }
+    }
+  };
 
   // Complete A-Z, 0-9, and Special Keys mapping
   const KEY_MAP = {
@@ -119,6 +210,7 @@
     volume: typeof saved.volume === 'number' ? saved.volume : 0.8,
     intensity: typeof saved.intensity === 'number' ? saved.intensity : 0.85,
     mode: saved.mode || 'meme',
+    lang: saved.lang || 'hi',
     reducedMotion: !!saved.reducedMotion,
     highScore: saved.highScore || 0,
     totalKeys: 0,
@@ -146,6 +238,7 @@
         volume: state.volume,
         intensity: state.intensity,
         mode: state.mode,
+        lang: state.lang,
         reducedMotion: state.reducedMotion,
         highScore: state.highScore
       }));
@@ -211,6 +304,8 @@
   let freqData = null;
   const audioBuffers = new Map();
   const htmlAudioPool = new Map();
+  let activeAzSource = null;
+  let activeAzHtmlAudio = null;
   let activeVoices = 0;
   const MAX_VOICES = 14;
 
@@ -270,27 +365,47 @@
   }
 
   function playBuffer(name, rate = 1) {
+    const isAz = name.startsWith('az_');
+    // Stop any currently-playing A-Z clip so they don't stack
+    if (isAz) {
+      if (activeAzSource) { try { activeAzSource.stop(); } catch { /**/ } activeAzSource = null; }
+      if (activeAzHtmlAudio) { try { activeAzHtmlAudio.pause(); activeAzHtmlAudio.currentTime = 0; } catch { /**/ } activeAzHtmlAudio = null; }
+    }
     if (audioBuffers.has(name) && audioCtx && masterGain) {
       if (activeVoices >= MAX_VOICES) return true;
       const src = audioCtx.createBufferSource();
       src.buffer = audioBuffers.get(name);
       src.playbackRate.value = rate;
       const g = audioCtx.createGain();
-      g.gain.value = 0.85;
+      g.gain.value = isAz ? 1.0 : 0.85;
       src.connect(g);
       g.connect(masterGain);
       activeVoices++;
-      src.onended = () => { activeVoices = Math.max(0, activeVoices - 1); };
+      if (isAz) activeAzSource = src;
+      src.onended = () => {
+        activeVoices = Math.max(0, activeVoices - 1);
+        if (activeAzSource === src) activeAzSource = null;
+      };
       src.start();
       return true;
     }
-    const baseAudio = htmlAudioPool.get(name);
+    let baseAudio = htmlAudioPool.get(name);
+    if (!baseAudio && isAz && SOUND_ASSET_FILES[name]) {
+      baseAudio = new Audio(SOUND_ASSET_FILES[name]);
+      baseAudio.preload = 'auto';
+      htmlAudioPool.set(name, baseAudio);
+    }
     if (baseAudio) {
       try {
-        const clone = baseAudio.cloneNode();
-        clone.volume = Math.min(1, state.volume * 0.85);
-        clone.playbackRate = rate;
-        clone.play().catch(() => {});
+        // For az_* clips: reuse the original element (cloneNode fails on file://)
+        // For regular sounds: clone so multiple can overlap
+        const target = isAz ? baseAudio : baseAudio.cloneNode(true);
+        target.pause();
+        target.currentTime = 0;
+        target.volume = Math.min(1, state.volume * (isAz ? 1.0 : 0.85));
+        target.playbackRate = rate;
+        if (isAz) activeAzHtmlAudio = target;
+        target.play().catch(() => {});
         return true;
       } catch { /* fall through to synth */ }
     }
@@ -534,7 +649,15 @@
     if (!state.soundEnabled) return;
     ensureAudioContext();
     const rate = state.mode === 'madness' ? 1.12 : state.mode === 'chill' ? 0.92 : 1.0;
-    if (window.MemeCustom?.play(meta, rate)) return;
+    if (meta.asset && meta.asset.startsWith('az_')) {
+      if ('speechSynthesis' in window) {
+        try { window.speechSynthesis.cancel(); } catch { /**/ }
+      }
+      clearTimeout(speechTimer);
+      isSpeaking = false;
+      playBuffer(meta.asset, rate);
+      return;
+    }
     const playedAsset = meta.asset ? playBuffer(meta.asset, rate) : false;
     if (!playedAsset || meta.synth === 'bassDrop') {
       // Keep synth subtle when speech is playing so words are never drowned out
@@ -834,7 +957,33 @@
   }
 
   /* ==================== 7. BUILD VIRTUAL KEYBOARD ==================== */
-  const keyButtons = new Map();
+
+  // Returns the base KEY_MAP entry merged with current language pack overrides
+  function getKeyMeta(keyName) {
+    const base = KEY_MAP[keyName];
+    if (!base) return null;
+    const pack = LANG_PACKS[state.lang]?.[keyName];
+    return pack ? { ...base, ...pack } : base;
+  }
+
+  function applyLanguage(lang, announce = true) {
+    if (!LANG_PACKS[lang]) return;
+    state.lang = lang;
+    document.querySelectorAll('.btn-lang').forEach((btn) => {
+      btn.classList.toggle('active', btn.dataset.lang === lang);
+    });
+    // Update keyboard key labels live
+    for (const [k, btn] of keyButtons.entries()) {
+      const meta = getKeyMeta(k);
+      const lb = btn.querySelector('.k-label');
+      if (meta && lb) lb.textContent = meta.label;
+    }
+    savePrefs();
+    if (announce) {
+      const names = { en: '🇬🇧 ENGLISH MEMES', hi: '🇮🇳 HINDI A-Z MEMES', kn: '💛❤️ KANNADA MEMES' };
+      showToast('🌐 LANGUAGE SWITCHED', `${names[lang]} activated!`);
+    }
+  }  const keyButtons = new Map();
 
   function displayKeyText(k) {
     if (k === ' ') return 'SPACE';
@@ -950,13 +1099,13 @@
     if (keyName === '0') {
       const alpha = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
       const randKey = alpha[Math.floor(Math.random() * alpha.length)];
-      const randMeta = KEY_MAP[randKey];
+      const randMeta = getKeyMeta(randKey);
       triggerVisualExplosion('0', { ...KEY_MAP['0'], caption: `0: Surprise → ${randMeta.caption}`, color: randMeta.color });
       playKeySound(randMeta);
       keyName = '0';
     }
 
-    const meta = KEY_MAP[keyName];
+    const meta = getKeyMeta(keyName);
     if (!meta) return;
 
     const now = performance.now();
@@ -996,7 +1145,7 @@
       setChaos(Math.min(100, state.chaos + 1));
     }
 
-    // Caption update
+    // Caption update — use lang-merged meta
     el.liveCaption.innerHTML = `
       <span class="caption-key" style="border-color:${meta.color};color:${meta.color}">${displayKeyText(keyName)}</span>
       <span class="caption-text">${meta.caption}</span>
@@ -1093,9 +1242,10 @@
   el.randomMemeBtn.addEventListener('click', () => {
     const pick = RANDOM_MEMES[Math.floor(Math.random() * RANDOM_MEMES.length)];
     el.randomMemeOutput.innerHTML = `<span class="rm-emoji">${pick.emoji}</span><span class="rm-text">"${pick.text}"</span>`;
-    if (KEY_MAP[pick.key]) {
-      playKeySound(KEY_MAP[pick.key]);
-      spawnCanvasBurst(KEY_MAP[pick.key].color, 18);
+    const pickMeta = getKeyMeta(pick.key);
+    if (pickMeta) {
+      playKeySound(pickMeta);
+      spawnCanvasBurst(pickMeta.color, 18);
     }
   });
 
@@ -1188,6 +1338,11 @@
 
   el.modeSelect.addEventListener('change', (e) => applyMode(e.target.value));
 
+  // Language switcher buttons
+  document.querySelectorAll('.btn-lang').forEach((btn) => {
+    btn.addEventListener('click', () => applyLanguage(btn.dataset.lang, true));
+  });
+
   el.reducedMotionBtn.addEventListener('click', () => {
     state.reducedMotion = !state.reducedMotion;
     document.body.classList.toggle('reduced-motion', state.reducedMotion);
@@ -1241,6 +1396,7 @@
   /* ==================== 12. INITIALIZE ==================== */
   window.MemeKeyMap = KEY_MAP;
   buildKeyboard();
+  applyLanguage(state.lang, false);
   applyMode(state.mode);
   el.volumeSlider.value = String(Math.round(state.volume * 100));
   el.volumeVal.textContent = `${Math.round(state.volume * 100)}%`;

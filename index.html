@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
@@ -8,6 +9,7 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="upgrade.css" />
 </head>
+
 <body class="mode-meme">
   <!-- Full-Screen Visual Canvas -->
   <canvas id="bg-canvas" aria-hidden="true"></canvas>
@@ -94,7 +96,9 @@
     </div>
     <div class="ticker" aria-hidden="true">
       <div class="ticker-track">
-        🎧 FAHHHH! • 🍆 AAYEIN? BAIGAN! • 😎 ಏನ್ ಗುರು ಇದು?! • 🤕 BHAI MAARO MUJHE MAARO! • 😂 SADHU KOKILA LAUGH • 🔊 SPACEBAR BASS DROP • 🎧 FAHHHH! • 🍆 AAYEIN? BAIGAN! • 😎 ಏನ್ ಗುರು ಇದು?! • 🤕 BHAI MAARO MUJHE MAARO! • 😂 SADHU KOKILA LAUGH • 🔊 SPACEBAR BASS DROP •
+        🎧 FAHHHH! • 🍆 AAYEIN? BAIGAN! • 😎 ಏನ್ ಗುರು ಇದು?! • 🤕 BHAI MAARO MUJHE MAARO! • 😂 SADHU KOKILA LAUGH • 🔊
+        SPACEBAR BASS DROP • 🎧 FAHHHH! • 🍆 AAYEIN? BAIGAN! • 😎 ಏನ್ ಗುರು ಇದು?! • 🤕 BHAI MAARO MUJHE MAARO! • 😂 SADHU
+        KOKILA LAUGH • 🔊 SPACEBAR BASS DROP •
       </div>
     </div>
   </section>
@@ -164,6 +168,12 @@
             <div id="chaos-fill" class="chaos-fill"></div>
           </div>
           <span id="chaos-pct" class="chaos-pct">0%</span>
+        </div>
+        <div class="lang-switcher" role="group" aria-label="Meme Language">
+          <span class="lang-label">LANG:</span>
+          <button class="btn-lang" data-lang="en" type="button">🇬🇧 ENGLISH</button>
+          <button class="btn-lang active" data-lang="hi" type="button">🇮🇳 HINDI</button>
+          <button class="btn-lang" data-lang="kn" type="button">💛❤️ KANNADA</button>
         </div>
         <div class="chaos-actions">
           <button id="chaos-btn" class="btn-chaos" type="button">[ ACTIVATE MAXIMUM CHAOS ]</button>
@@ -250,40 +260,6 @@
             </button>
           </div>
         </div>
-
-        <!-- Custom Sound Studio -->
-        <div class="deck-card studio-card">
-          <div class="card-header">🎵 SOUND STUDIO — CUSTOM KEY AUDIO</div>
-          <div class="studio-grid">
-            <div class="studio-controls">
-              <label for="studio-key">TARGET KEY</label>
-              <div class="studio-row">
-                <select id="studio-key"></select>
-                <button id="studio-pick-btn" class="btn-ctrl" type="button">🎯 PRESS A KEY</button>
-              </div>
-              <label id="studio-drop" class="studio-drop" for="studio-file">
-                <span>📂 Drop MP3 / M4A / WAV / OGG / MP4 here or click to browse</span>
-                <input id="studio-file" type="file" accept="audio/*,video/mp4" />
-              </label>
-              <div class="studio-row">
-                <label for="studio-clip">CLIP LENGTH</label>
-                <select id="studio-clip">
-                  <option value="2000">2 sec</option>
-                  <option value="4000" selected>4 sec</option>
-                  <option value="8000">8 sec</option>
-                  <option value="0">Full clip</option>
-                </select>
-                <button id="studio-clear" class="btn-ctrl btn-warn hidden" type="button">CLEAR ALL</button>
-              </div>
-            </div>
-            <div>
-              <div id="studio-list" class="studio-list"></div>
-              <div class="studio-foot">
-                <span id="studio-status">Loading local audio studio…</span>
-              </div>
-            </div>
-          </div>
-        </div>
       </section>
     </div>
   </main>
@@ -330,8 +306,7 @@
 
   <script src="script.js"></script>
   <script src="intro-video.js"></script>
-  <script src="custom-audio.js"></script>
   <script src="enhance.js"></script>
 </body>
-</html>
 
+</html>
