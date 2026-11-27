@@ -229,7 +229,7 @@
     volume: typeof saved.volume === 'number' ? saved.volume : 0.8,
     intensity: typeof saved.intensity === 'number' ? saved.intensity : 0.85,
     mode: saved.mode || 'meme',
-    lang: saved.lang || 'hi',
+    lang: (saved.lang === 'hi' || saved.lang === 'kn') ? saved.lang : 'hi',
     reducedMotion: !!saved.reducedMotion,
     highScore: saved.highScore || 0,
     totalKeys: 0,
