@@ -25,21 +25,25 @@
   for (const ch of 'abcdefghijklmnopqrstuvwxyz') {
     SOUND_ASSET_FILES[`az_${ch}`] = `assets/sounds/az/${ch}.mp3`;
   }
+  SOUND_ASSET_FILES.az_f = 'assets/sounds/az/f.mpeg';
+  for (const ch of 'abcdglt') {
+    SOUND_ASSET_FILES[`az_${ch}`] = `assets/sounds/az/${ch}.mp4`;
+  }
 
   // Language-specific A-Z meme packs (English / Hindi A-Z Short / Kannada)
   const LANG_PACKS = {
     hi: {
       A: { label: 'ARE BAAP RE', caption: 'Are Baap Re! 😱', speakHi: 'अरे बाप रे!', asset: 'az_a' },
       B: { label: 'BAIGAN!', caption: 'Baigan! 🍆', speakHi: 'बैंगन!', asset: 'az_b' },
-      C: { label: 'C SE MEME', caption: 'C Viral Meme! 🔥', speakHi: 'सी से मीम!', asset: 'az_c' },
-      D: { label: 'DUM DUM TA', caption: 'Dum Dum Ta! 🥁', speakHi: 'डम डम ता!', asset: 'az_d' },
+      C: { label: 'CHILL BRO', caption: 'Chalta Hai Yaar! 😎🔥', speakHi: 'चलता है यार!', asset: 'az_c' },
+      D: { label: 'DHOKA!', caption: 'Dhoka Ho Gaya! 🥁💥', speakHi: 'धोखा हो गया!', asset: 'az_d' },
       E: { label: 'AAYEIN?', caption: 'Aayein?! 🤨', speakHi: 'आएँ?', asset: 'az_e' },
-      F: { label: 'F DIALOGUE', caption: 'Viral Dialogue! ⚡', speakHi: 'एफ से मीम!', asset: 'az_f' },
-      G: { label: 'GHAZAR!', caption: 'Ghazar! 😎', speakHi: 'ग़ज़र!', asset: 'az_g' },
+      F: { label: 'FAHHHH!', caption: 'FAHHHH! Full Power! ⚡🔥', speakHi: 'फाह!', asset: 'az_f' },
+      G: { label: 'GAJAB!', caption: 'Gajab Beizzati Hai! 😎', speakHi: 'गजब बेइज्जती है!', asset: 'az_g' },
       H: { label: 'HAIN JI?', caption: 'Hain Ji?! 🧐', speakHi: 'हैं जी?', asset: 'az_h' },
       I: { label: 'MODI JI!', caption: 'Narendra Modi! 🤩', speakHi: 'नरेंद्र मोदी!', asset: 'az_i' },
       J: { label: 'JALDI HATO', caption: 'Jaldi Wahan Se Hato! 🏃', speakHi: 'जल्दी वहाँ से हटो!', asset: 'az_j' },
-      K: { label: 'KHAZANA!', caption: 'Khazana De Do! 💰', speakHi: 'खज़ाना दे दो!', asset: 'az_k' },
+      K: { label: 'KYA BAAT!', caption: 'Kya Baat Hai Boss! 💰🔥', speakHi: 'क्या बात है बॉस!', asset: 'az_k' },
       L: { label: 'LE LE BETA', caption: 'Le Le Beta! 😂', speakHi: 'ले ले बेटा!', asset: 'az_l' },
       M: { label: 'MAAREGA!', caption: 'Maarega Mujhe! 🤕', speakHi: 'मारेगा मुझे!', asset: 'az_m' },
       N: { label: 'NAHI!', caption: 'Nahi! 🙅', speakHi: 'नहीं!', asset: 'az_n' },
@@ -52,7 +56,7 @@
       U: { label: 'UTHA LE RE', caption: 'Utha Le Re Baba! 🙏', speakHi: 'उठा ले रे बाबा!', asset: 'az_u' },
       V: { label: 'VIDEO KYUN', caption: 'Video Kyun Bana Raha Hai! 📹', speakHi: 'वीडियो क्यों बना रहा है!', asset: 'az_v' },
       W: { label: 'WAH SCENE!', caption: 'Wah Kya Scene Hai! 🌟', speakHi: 'वाह क्या सीन है!', asset: 'az_w' },
-      X: { label: 'PATA NAHI', caption: 'Mujhe Mat Puchho! 🤷', speakHi: 'मुझे मत पूछो!', asset: 'az_x' },
+      X: { label: 'X-TREME!', caption: 'Mujhe Mat Puchho Bhai! 🤷💥', speakHi: 'मुझे मत पूछो भाई!', asset: 'az_x' },
       Y: { label: 'YE KYA HAI', caption: 'Ye Sab Kya Dekhna Pad Raha Hai! 😭', speakHi: 'ये सब क्या देखना पड़ रहा है!', asset: 'az_y' },
       Z: { label: 'CHIN TAPAK', caption: 'Chin Tapak Dum Dum! 🕺🔥', speakHi: 'चिन तपाक डम डम!', asset: 'az_z' }
     },
