@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <linearGradient id="neonGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff2a85"/>
+      <stop offset="50%" stop-color="#9d4edd"/>
+      <stop offset="100%" stop-color="#00f5d4"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+  <rect x="8" y="8" width="104" height="104" rx="22" fill="#07070d" stroke="url(#neonGrad)" stroke-width="4" filter="url(#glow)"/>
+  <rect x="22" y="34" width="22" height="22" rx="5" fill="#16162a" stroke="#00f5d4" stroke-width="2.5"/>
+  <rect x="49" y="34" width="22" height="22" rx="5" fill="#16162a" stroke="#ff2a85" stroke-width="2.5"/>
+  <rect x="76" y="34" width="22" height="22" rx="5" fill="#16162a" stroke="#fee440" stroke-width="2.5"/>
+  <rect x="28" y="64" width="64" height="20" rx="6" fill="#16162a" stroke="#9d4edd" stroke-width="2.5"/>
+  <text x="33" y="50" font-family="monospace" font-weight="bold" font-size="13" fill="#00f5d4" text-anchor="middle">A</text>
+  <text x="60" y="50" font-family="monospace" font-weight="bold" font-size="13" fill="#ff2a85" text-anchor="middle">F</text>
+  <text x="87" y="50" font-family="monospace" font-weight="bold" font-size="13" fill="#fee440" text-anchor="middle">K</text>
+  <text x="60" y="78" font-family="monospace" font-weight="bold" font-size="10" fill="#00f5d4" text-anchor="middle">BASS DROP</text>
+</svg>
+

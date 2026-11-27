@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>THE MEME MACHINE.EXE — Infinite Kannada / Hindi Meme Keyboard</title>
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="mode-meme">
+  <!-- Full-Screen Visual Canvas -->
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+
+  <!-- Full-Screen DOM Explosion & Typography Overlay -->
+  <div id="fx-overlay" aria-hidden="true"></div>
+
+  <!-- Secret Easter Egg & Chaos Banner Notifications -->
+  <div id="toast-container" aria-live="polite"></div>
+
+  <!-- ==================== 1. INTRODUCTION SCREEN ==================== -->
+  <section id="intro-screen" class="screen active" aria-label="Introduction">
+    <div class="intro-bg-grid"></div>
+    <div class="intro-content">
+      <div class="intro-badge">
+        <img src="assets/images/logo.svg" alt="The Meme Machine Logo" class="intro-logo" />
+        <span class="glitch-text" data-text="THE MEME MACHINE.EXE">THE MEME MACHINE.EXE</span>
+      </div>
+
+      <h1 class="intro-title glitch-text" data-text="WELCOME TO THE MEME MACHINE">
+        WELCOME TO THE MEME MACHINE
+      </h1>
+
+      <p class="intro-quote">"Your keyboard has officially lost its seriousness."</p>
+      <p class="intro-subtitle">Forget typing. Start memeing.</p>
+
+      <!-- Animated Center Preview Keyboard -->
+      <div class="intro-keyboard-preview" id="intro-keyboard-preview" aria-hidden="true">
+        <div class="preview-row">
+          <span class="pk" data-c="cyan">Q</span>
+          <span class="pk" data-c="pink">W</span>
+          <span class="pk" data-c="yellow">E</span>
+          <span class="pk" data-c="purple">R</span>
+          <span class="pk" data-c="green">T</span>
+          <span class="pk" data-c="blue">Y</span>
+          <span class="pk" data-c="pink">U</span>
+          <span class="pk" data-c="cyan">I</span>
+          <span class="pk" data-c="yellow">O</span>
+          <span class="pk" data-c="green">P</span>
+        </div>
+        <div class="preview-row">
+          <span class="pk" data-c="yellow">A</span>
+          <span class="pk" data-c="green">S</span>
+          <span class="pk" data-c="blue">D</span>
+          <span class="pk" data-c="pink">F</span>
+          <span class="pk" data-c="purple">G</span>
+          <span class="pk" data-c="cyan">H</span>
+          <span class="pk" data-c="yellow">J</span>
+          <span class="pk" data-c="green">K</span>
+          <span class="pk" data-c="pink">L</span>
+        </div>
+        <div class="preview-row">
+          <span class="pk" data-c="purple">Z</span>
+          <span class="pk" data-c="cyan">X</span>
+          <span class="pk" data-c="green">C</span>
+          <span class="pk" data-c="yellow">V</span>
+          <span class="pk" data-c="pink">B</span>
+          <span class="pk" data-c="blue">N</span>
+          <span class="pk" data-c="purple">M</span>
+        </div>
+        <div class="preview-row">
+          <span class="pk pk-space" data-c="cyan">BASS DROP</span>
+        </div>
+      </div>
+
+      <button id="enter-universe-btn" class="btn-neon-primary" type="button">
+        [ ENTER THE MEME UNIVERSE ]
+      </button>
+
+      <p class="intro-instruction">
+        PRESS ANY KEY FROM A TO Z AND WATCH THE MADNESS BEGIN!
+      </p>
+    </div>
+  </section>
+
+  <!-- ==================== 2. MAIN PERFORMANCE STAGE ==================== -->
+  <main id="stage-screen" class="screen" aria-label="Meme Keyboard Stage">
+    <div id="app-shell" class="app-shell">
+      <!-- Top DJ HUD -->
+      <header class="hud-header" id="hud-header">
+        <div class="brand-cluster">
+          <img src="assets/images/logo.svg" alt="" class="hud-logo" />
+          <div>
+            <div class="hud-title">THE MEME MACHINE.EXE</div>
+            <div class="hud-tagline">PRESS A KEY. RELEASE THE MEME. DESTROY THE SILENCE.</div>
+          </div>
+        </div>
+
+        <div class="dj-status-cluster">
+          <div class="dj-mode-label">YOU ARE THE MEME DJ.</div>
+          <div id="dj-hype-msg" class="dj-hype-msg">READY TO DROP MEMES</div>
+          <canvas id="beat-visualizer" width="220" height="34" aria-hidden="true"></canvas>
+        </div>
+
+        <div class="stats-cluster">
+          <div class="stat-pill">
+            <span class="stat-label">COMBO</span>
+            <span id="stat-combo" class="stat-val neon-pink">x0</span>
+          </div>
+          <div class="stat-pill">
+            <span class="stat-label">STREAK</span>
+            <span id="stat-streak" class="stat-val neon-cyan">0</span>
+          </div>
+          <div class="stat-pill">
+            <span class="stat-label">BEST</span>
+            <span id="stat-best" class="stat-val neon-yellow">x0</span>
+          </div>
+          <div class="stat-pill">
+            <span class="stat-label">KEYS</span>
+            <span id="stat-keys" class="stat-val neon-green">0</span>
+          </div>
+        </div>
+
+        <div class="header-actions">
+          <button id="sound-quick-btn" class="btn-pill btn-sound-off" type="button" title="Toggle Sound">
+            🔇 SOUND: OFF
+          </button>
+          <button id="live-demo-btn" class="btn-pill" type="button" title="Toggle Live Presentation Mode">
+            🎤 LIVE DEMO
+          </button>
+          <button id="end-show-btn" class="btn-pill btn-danger" type="button" title="Finish Performance">
+            🏁 FINISH
+          </button>
+        </div>
+      </header>
+
+      <!-- Live Demo Judge Banner (visible in Live Demo Mode) -->
+      <div id="judge-banner" class="judge-banner hidden">
+        <span>🎤 JUDGES, PRESS ANY KEY!</span>
+        <button id="exit-demo-btn" class="btn-pill" type="button">EXIT DEMO</button>
+      </div>
+
+      <!-- Chaos Meter & Chaos Trigger Bar -->
+      <section class="chaos-bar" id="chaos-bar">
+        <div class="chaos-meter-wrap">
+          <span class="chaos-label">CHAOS LEVEL</span>
+          <div class="chaos-track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+            <div id="chaos-fill" class="chaos-fill"></div>
+          </div>
+          <span id="chaos-pct" class="chaos-pct">0%</span>
+        </div>
+        <div class="chaos-actions">
+          <button id="chaos-btn" class="btn-chaos" type="button">[ ACTIVATE MAXIMUM CHAOS ]</button>
+          <button id="exit-chaos-btn" class="btn-pill hidden" type="button">EXIT CHAOS</button>
+          <span id="secrets-badge" class="secrets-badge" title="Discover secret key combos!">🔮 SECRETS: 0/4</span>
+        </div>
+      </section>
+
+      <!-- Audio Enable Prompt (shown while Sound is OFF) -->
+      <button id="audio-unlock-banner" class="audio-unlock-banner" type="button">
+        🔇 SOUND IS MUTED — CLICK HERE TO ENABLE AUDIO 🔊
+      </button>
+
+      <!-- Live Caption Display -->
+      <section class="caption-stage" aria-live="polite">
+        <div id="live-caption" class="live-caption">
+          <span class="caption-key">READY</span>
+          <span class="caption-text">Enable Sound &amp; Mash Your Keyboard!</span>
+          <span class="caption-emoji">🎧🔥</span>
+        </div>
+      </section>
+
+      <!-- Interactive Virtual Keyboard -->
+      <section class="keyboard-stage" aria-label="Interactive Meme Keyboard">
+        <div id="virtual-keyboard" class="virtual-keyboard"></div>
+      </section>
+
+      <!-- Performance Control Panel + Mini-Games (hidden in Live Demo Mode) -->
+      <section class="bottom-deck" id="bottom-deck">
+        <!-- Control Panel -->
+        <div class="deck-card control-panel">
+          <div class="card-header">🎛️ PERFORMANCE CONTROL PANEL</div>
+          <div class="controls-grid">
+            <div class="control-item">
+              <label for="sound-toggle-btn">AUDIO ENGINE</label>
+              <button id="sound-toggle-btn" class="btn-ctrl off" type="button">SOUND: OFF</button>
+            </div>
+            <div class="control-item">
+              <label for="volume-slider">VOLUME <span id="volume-val">80%</span></label>
+              <input id="volume-slider" type="range" min="0" max="100" value="80" />
+            </div>
+            <div class="control-item">
+              <label for="intensity-slider">VISUAL FX <span id="intensity-val">85%</span></label>
+              <input id="intensity-slider" type="range" min="10" max="100" value="85" />
+            </div>
+            <div class="control-item">
+              <label for="mode-select">MEME MODE</label>
+              <select id="mode-select">
+                <option value="chill">CHILL MODE</option>
+                <option value="meme" selected>MEME MODE</option>
+                <option value="madness">TOTAL MADNESS</option>
+              </select>
+            </div>
+            <div class="control-item control-buttons">
+              <button id="reduced-motion-btn" class="btn-ctrl" type="button">MOTION: FULL</button>
+              <button id="fullscreen-btn" class="btn-ctrl" type="button">⛶ FULLSCREEN</button>
+              <button id="reset-perf-btn" class="btn-ctrl btn-warn" type="button">↺ RESET PERFORMANCE</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Random Meme Generator -->
+        <div class="deck-card random-meme-card">
+          <div class="card-header">🎲 WHAT WILL YOUR NEXT KEY SAY?</div>
+          <div id="random-meme-output" class="random-meme-output">
+            <span class="rm-emoji">🤔</span>
+            <span class="rm-text">"Bhai, ye kya ho gaya?"</span>
+          </div>
+          <button id="random-meme-btn" class="btn-neon-secondary" type="button">
+            GENERATE RANDOM MEME
+          </button>
+        </div>
+
+        <!-- Impossible Button Challenge -->
+        <div class="deck-card impossible-card" id="impossible-arena">
+          <div class="card-header">🏃 IMPOSSIBLE BUTTON CHALLENGE</div>
+          <div class="impossible-stats">
+            Attempts: <span id="impossible-attempts">0</span> |
+            <span id="impossible-status">Try to catch it!</span>
+          </div>
+          <div class="impossible-stage" id="impossible-stage">
+            <button id="impossible-btn" class="btn-impossible" type="button">
+              [ CLICK ME IF YOU CAN ]
+            </button>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- ==================== 3. FINAL SCREEN ==================== -->
+  <section id="final-screen" class="screen" aria-label="Performance Summary">
+    <div class="final-card">
+      <div class="final-kicker">PERFORMANCE COMPLETE</div>
+      <h2 class="final-title">"YOU DIDN'T TYPE ANYTHING."</h2>
+      <p class="final-subtitle">"YOU CREATED A MASTERPIECE OF NONSENSE."</p>
+
+      <div class="final-stats-grid">
+        <div class="final-stat">
+          <div class="fs-label">TOTAL KEYS PRESSED</div>
+          <div id="final-keys" class="fs-val neon-cyan">0</div>
+        </div>
+        <div class="final-stat">
+          <div class="fs-label">TOTAL MEMES TRIGGERED</div>
+          <div id="final-memes" class="fs-val neon-pink">0</div>
+        </div>
+        <div class="final-stat">
+          <div class="fs-label">HIGHEST COMBO</div>
+          <div id="final-combo" class="fs-val neon-yellow">x0</div>
+        </div>
+        <div class="final-stat">
+          <div class="fs-label">MAX CHAOS LEVEL</div>
+          <div id="final-chaos" class="fs-val neon-green">0%</div>
+        </div>
+      </div>
+
+      <div class="final-actions">
+        <button id="play-again-btn" class="btn-neon-primary" type="button">[ PLAY AGAIN ]</button>
+        <button id="enter-madness-btn" class="btn-chaos" type="button">[ ENTER TOTAL MADNESS ]</button>
+      </div>
+
+      <div class="final-brand">
+        <div class="fb-name">THE MEME MACHINE.EXE</div>
+        <div class="fb-tag">"PRESS A KEY. RELEASE THE MEME. DESTROY THE SILENCE."</div>
+      </div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
