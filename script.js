@@ -534,6 +534,7 @@
     if (!state.soundEnabled) return;
     ensureAudioContext();
     const rate = state.mode === 'madness' ? 1.12 : state.mode === 'chill' ? 0.92 : 1.0;
+    if (window.MemeCustom?.play(meta, rate)) return;
     const playedAsset = meta.asset ? playBuffer(meta.asset, rate) : false;
     if (!playedAsset || meta.synth === 'bassDrop') {
       // Keep synth subtle when speech is playing so words are never drowned out
@@ -1238,6 +1239,7 @@
   });
 
   /* ==================== 12. INITIALIZE ==================== */
+  window.MemeKeyMap = KEY_MAP;
   buildKeyboard();
   applyMode(state.mode);
   el.volumeSlider.value = String(Math.round(state.volume * 100));

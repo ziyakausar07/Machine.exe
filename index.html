@@ -6,6 +6,7 @@
   <title>THE MEME MACHINE.EXE — Infinite Kannada / Hindi Meme Keyboard</title>
   <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="upgrade.css" />
 </head>
 <body class="mode-meme">
   <!-- Full-Screen Visual Canvas -->
@@ -17,8 +18,19 @@
   <!-- Secret Easter Egg & Chaos Banner Notifications -->
   <div id="toast-container" aria-live="polite"></div>
 
+  <!-- ==================== 0. INTRO VIDEO SPLASH ==================== -->
+  <section id="video-screen" class="screen active" aria-label="Intro Video">
+    <video id="intro-video" playsinline preload="auto">
+      <source src="assets/video/intro.mp4" type="video/mp4" />
+      <source src="assets/video/intro.webm" type="video/webm" />
+    </video>
+    <div id="video-progress" class="video-progress"></div>
+    <button id="video-start" class="video-start hidden" type="button">[ CLICK TO PLAY INTRO ]</button>
+    <button id="video-skip" class="btn-pill video-skip" type="button">SKIP INTRO ⏭</button>
+  </section>
+
   <!-- ==================== 1. INTRODUCTION SCREEN ==================== -->
-  <section id="intro-screen" class="screen active" aria-label="Introduction">
+  <section id="intro-screen" class="screen" aria-label="Introduction">
     <div class="intro-bg-grid"></div>
     <div class="intro-content">
       <div class="intro-badge">
@@ -79,6 +91,11 @@
       <p class="intro-instruction">
         PRESS ANY KEY FROM A TO Z AND WATCH THE MADNESS BEGIN!
       </p>
+    </div>
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker-track">
+        🎧 FAHHHH! • 🍆 AAYEIN? BAIGAN! • 😎 ಏನ್ ಗುರು ಇದು?! • 🤕 BHAI MAARO MUJHE MAARO! • 😂 SADHU KOKILA LAUGH • 🔊 SPACEBAR BASS DROP • 🎧 FAHHHH! • 🍆 AAYEIN? BAIGAN! • 😎 ಏನ್ ಗುರು ಇದು?! • 🤕 BHAI MAARO MUJHE MAARO! • 😂 SADHU KOKILA LAUGH • 🔊 SPACEBAR BASS DROP •
+      </div>
     </div>
   </section>
 
@@ -233,6 +250,40 @@
             </button>
           </div>
         </div>
+
+        <!-- Custom Sound Studio -->
+        <div class="deck-card studio-card">
+          <div class="card-header">🎵 SOUND STUDIO — CUSTOM KEY AUDIO</div>
+          <div class="studio-grid">
+            <div class="studio-controls">
+              <label for="studio-key">TARGET KEY</label>
+              <div class="studio-row">
+                <select id="studio-key"></select>
+                <button id="studio-pick-btn" class="btn-ctrl" type="button">🎯 PRESS A KEY</button>
+              </div>
+              <label id="studio-drop" class="studio-drop" for="studio-file">
+                <span>📂 Drop MP3 / M4A / WAV / OGG / MP4 here or click to browse</span>
+                <input id="studio-file" type="file" accept="audio/*,video/mp4" />
+              </label>
+              <div class="studio-row">
+                <label for="studio-clip">CLIP LENGTH</label>
+                <select id="studio-clip">
+                  <option value="2000">2 sec</option>
+                  <option value="4000" selected>4 sec</option>
+                  <option value="8000">8 sec</option>
+                  <option value="0">Full clip</option>
+                </select>
+                <button id="studio-clear" class="btn-ctrl btn-warn hidden" type="button">CLEAR ALL</button>
+              </div>
+            </div>
+            <div>
+              <div id="studio-list" class="studio-list"></div>
+              <div class="studio-foot">
+                <span id="studio-status">Loading local audio studio…</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
     </div>
   </main>
@@ -241,6 +292,7 @@
   <section id="final-screen" class="screen" aria-label="Performance Summary">
     <div class="final-card">
       <div class="final-kicker">PERFORMANCE COMPLETE</div>
+      <div id="final-rank" class="final-rank">RANK: MEME DJ</div>
       <h2 class="final-title">"YOU DIDN'T TYPE ANYTHING."</h2>
       <p class="final-subtitle">"YOU CREATED A MASTERPIECE OF NONSENSE."</p>
 
@@ -266,6 +318,7 @@
       <div class="final-actions">
         <button id="play-again-btn" class="btn-neon-primary" type="button">[ PLAY AGAIN ]</button>
         <button id="enter-madness-btn" class="btn-chaos" type="button">[ ENTER TOTAL MADNESS ]</button>
+        <button id="share-btn" class="btn-neon-secondary" type="button">[ COPY MY SCORE ]</button>
       </div>
 
       <div class="final-brand">
@@ -276,6 +329,9 @@
   </section>
 
   <script src="script.js"></script>
+  <script src="intro-video.js"></script>
+  <script src="custom-audio.js"></script>
+  <script src="enhance.js"></script>
 </body>
 </html>
 
