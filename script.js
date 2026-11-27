@@ -35,6 +35,15 @@
   for (const d of '012346789') {
     SOUND_ASSET_FILES[`kannum_${d}`] = `assets/sounds/kannum/${d}.mp3`;
   }
+  SOUND_ASSET_FILES.hindnum_1 = 'assets/sounds/hindnum/1.mp3';
+  SOUND_ASSET_FILES.hindnum_2 = 'assets/sounds/hindnum/2.mp3';
+  SOUND_ASSET_FILES.hindnum_3 = 'assets/sounds/hindnum/3.mp3';
+  SOUND_ASSET_FILES.hindnum_4 = 'assets/sounds/hindnum/4.mp3';
+  SOUND_ASSET_FILES.hindnum_5 = 'assets/sounds/hindnum/5.mp3';
+  SOUND_ASSET_FILES.hindnum_6 = 'assets/sounds/hindnum/6.mp3';
+  SOUND_ASSET_FILES.hindnum_7 = 'assets/sounds/hindnum/7.mp3';
+  SOUND_ASSET_FILES.hindnum_8 = 'assets/sounds/hindnum/8.mp3';
+  SOUND_ASSET_FILES.hindnum_9 = 'assets/sounds/hindnum/9.mp3';
 
   // Language-specific A-Z meme packs (English / Hindi A-Z Short / Kannada)
   const LANG_PACKS = {
@@ -64,7 +73,16 @@
       W: { label: 'WAH SCENE!', caption: 'Wah Kya Scene Hai! 🌟', speakHi: 'वाह क्या सीन है!', asset: 'az_w' },
       X: { label: 'X-TREME!', caption: 'Mujhe Mat Puchho Bhai! 🤷💥', speakHi: 'मुझे मत पूछो भाई!', asset: 'az_x' },
       Y: { label: 'YE KYA HAI', caption: 'Ye Sab Kya Dekhna Pad Raha Hai! 😭', speakHi: 'ये सब क्या देखना पड़ रहा है!', asset: 'az_y' },
-      Z: { label: 'CHIN TAPAK', caption: 'Chin Tapak Dum Dum! 🕺🔥', speakHi: 'चिन तपाक डम डम!', asset: 'az_z' }
+      Z: { label: 'CHIN TAPAK', caption: 'Chin Tapak Dum Dum! 🕺🔥', speakHi: 'चिन तपाक डम डम!', asset: 'az_z' },
+      '1': { label: 'NO. 1 KAMINA', caption: '1: नंबर एक का कमीना है! 😤🔥', asset: 'hindnum_1' },
+      '2': { label: 'DO DO BAAP', caption: '2: मेरे दो दो बाप! 😂', asset: 'hindnum_2' },
+      '3': { label: '3 DIN!', caption: '3: तीन दिन तो बहुत कम टाइम है रे! ⏳😂', asset: 'hindnum_3' },
+      '4': { label: '4 DEEWAREIN', caption: '4: चार दीवारें, छत और मैं! 🏠😂', asset: 'hindnum_4' },
+      '5': { label: '5 FOOT!', caption: '5: मेरा कद भले ही 5 फुट का है... हाथ 20 फुट का! ✋🔥', asset: 'hindnum_5' },
+      '6': { label: '6 KE 6!', caption: '6: तो 6 के 6 डाल देना साले के भेजे में! 🔥', asset: 'hindnum_6' },
+      '7': { label: '7 CRORE!', caption: '7: सात करोड़! 💰🔥', asset: 'hindnum_7' },
+      '8': { label: 'AATA MAJHI', caption: '8: आता माझी सटकली! 🦁🔥', asset: 'hindnum_8' },
+      '9': { label: '999-888-222', caption: '9: बस 10 नंबर हो गया! 📞😂', asset: 'hindnum_9' }
     },
     en: {
       A: { label: 'AMONG US', caption: 'AMONG US?! SUS! 📮', speak: 'Among Us? That is sus!', asset: null },
@@ -384,7 +402,7 @@
   }
 
   function playBuffer(name, rate = 1) {
-    const isAz = name.startsWith('az_') || name.startsWith('kannaz_') || name.startsWith('kannum_');
+    const isAz = name.startsWith('az_') || name.startsWith('kannaz_') || name.startsWith('kannum_') || name.startsWith('hindnum_');
     // Stop any currently-playing A-Z clip so they don't stack
     if (isAz) {
       if (activeAzSource) { try { activeAzSource.stop(); } catch { /**/ } activeAzSource = null; }
@@ -668,7 +686,7 @@
     if (!state.soundEnabled) return;
     ensureAudioContext();
     const rate = state.mode === 'madness' ? 1.12 : state.mode === 'chill' ? 0.92 : 1.0;
-    if (meta.asset && (meta.asset.startsWith('az_') || meta.asset.startsWith('kannaz_') || meta.asset.startsWith('kannum_'))) {
+    if (meta.asset && (meta.asset.startsWith('az_') || meta.asset.startsWith('kannaz_') || meta.asset.startsWith('kannum_') || meta.asset.startsWith('hindnum_'))) {
       if ('speechSynthesis' in window) {
         try { window.speechSynthesis.cancel(); } catch { /**/ }
       }
@@ -1115,13 +1133,14 @@
 
   function handleKeyTrigger(rawKey) {
     let keyName = rawKey;
-    if (keyName === '0') {
-      const alpha = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-      const randKey = alpha[Math.floor(Math.random() * alpha.length)];
+    let surpriseMeta = null;
+    if (keyName === '0' && state.lang !== 'kn') {
+      const pool = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789';
+      const randKey = pool[Math.floor(Math.random() * pool.length)];
       const randMeta = getKeyMeta(randKey);
-      triggerVisualExplosion('0', { ...KEY_MAP['0'], caption: `0: Surprise → ${randMeta.caption}`, color: randMeta.color });
+      surpriseMeta = { ...KEY_MAP['0'], caption: `0: Surprise → ${randMeta.caption}`, color: randMeta.color };
+      triggerVisualExplosion('0', surpriseMeta);
       playKeySound(randMeta);
-      keyName = '0';
     }
 
     const meta = getKeyMeta(keyName);
@@ -1164,17 +1183,18 @@
       setChaos(Math.min(100, state.chaos + 1));
     }
 
-    // Caption update — use lang-merged meta
+    // Caption update — use lang-merged meta (or surprise meta when 0 triggers random)
+    const displayMeta = surpriseMeta || meta;
     el.liveCaption.innerHTML = `
-      <span class="caption-key" style="border-color:${meta.color};color:${meta.color}">${displayKeyText(keyName)}</span>
-      <span class="caption-text">${meta.caption}</span>
-      <span class="caption-emoji">${meta.emoji}</span>
+      <span class="caption-key" style="border-color:${displayMeta.color};color:${displayMeta.color}">${displayKeyText(keyName)}</span>
+      <span class="caption-text">${displayMeta.caption}</span>
+      <span class="caption-emoji">${displayMeta.emoji}</span>
     `;
     el.liveCaption.classList.remove('pop');
     void el.liveCaption.offsetWidth;
     el.liveCaption.classList.add('pop');
 
-    if (keyName !== '0') {
+    if (!surpriseMeta) {
       playKeySound(meta);
       triggerVisualExplosion(keyName, meta);
     }
