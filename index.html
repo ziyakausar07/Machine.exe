@@ -122,43 +122,13 @@
           <canvas id="beat-visualizer" width="220" height="34" aria-hidden="true"></canvas>
         </div>
 
-        <div class="stats-cluster">
-          <div class="stat-pill">
-            <span class="stat-label">COMBO</span>
-            <span id="stat-combo" class="stat-val neon-pink">x0</span>
-          </div>
-          <div class="stat-pill">
-            <span class="stat-label">STREAK</span>
-            <span id="stat-streak" class="stat-val neon-cyan">0</span>
-          </div>
-          <div class="stat-pill">
-            <span class="stat-label">BEST</span>
-            <span id="stat-best" class="stat-val neon-yellow">x0</span>
-          </div>
-          <div class="stat-pill">
-            <span class="stat-label">KEYS</span>
-            <span id="stat-keys" class="stat-val neon-green">0</span>
-          </div>
-        </div>
 
         <div class="header-actions">
           <button id="sound-quick-btn" class="btn-pill btn-sound-off" type="button" title="Toggle Sound">
             🔇 SOUND: OFF
           </button>
-          <button id="live-demo-btn" class="btn-pill" type="button" title="Toggle Live Presentation Mode">
-            🎤 LIVE DEMO
-          </button>
-          <button id="end-show-btn" class="btn-pill btn-danger" type="button" title="Finish Performance">
-            🏁 FINISH
-          </button>
         </div>
       </header>
-
-      <!-- Live Demo Judge Banner (visible in Live Demo Mode) -->
-      <div id="judge-banner" class="judge-banner hidden">
-        <span>🎤 JUDGES, PRESS ANY KEY!</span>
-        <button id="exit-demo-btn" class="btn-pill" type="button">EXIT DEMO</button>
-      </div>
 
       <!-- Chaos Meter & Chaos Trigger Bar -->
       <section class="chaos-bar" id="chaos-bar">
@@ -200,7 +170,7 @@
         <div id="virtual-keyboard" class="virtual-keyboard"></div>
       </section>
 
-      <!-- Performance Control Panel + Mini-Games (hidden in Live Demo Mode) -->
+      <!-- Performance Control Panel -->
       <section class="bottom-deck" id="bottom-deck">
         <!-- Control Panel -->
         <div class="deck-card control-panel">
@@ -234,31 +204,6 @@
           </div>
         </div>
 
-        <!-- Random Meme Generator -->
-        <div class="deck-card random-meme-card">
-          <div class="card-header">🎲 WHAT WILL YOUR NEXT KEY SAY?</div>
-          <div id="random-meme-output" class="random-meme-output">
-            <span class="rm-emoji">🤔</span>
-            <span class="rm-text">"Bhai, ye kya ho gaya?"</span>
-          </div>
-          <button id="random-meme-btn" class="btn-neon-secondary" type="button">
-            GENERATE RANDOM MEME
-          </button>
-        </div>
-
-        <!-- Impossible Button Challenge -->
-        <div class="deck-card impossible-card" id="impossible-arena">
-          <div class="card-header">🏃 IMPOSSIBLE BUTTON CHALLENGE</div>
-          <div class="impossible-stats">
-            Attempts: <span id="impossible-attempts">0</span> |
-            <span id="impossible-status">Try to catch it!</span>
-          </div>
-          <div class="impossible-stage" id="impossible-stage">
-            <button id="impossible-btn" class="btn-impossible" type="button">
-              [ CLICK ME IF YOU CAN ]
-            </button>
-          </div>
-        </div>
       </section>
     </div>
   </main>

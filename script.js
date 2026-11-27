@@ -58,7 +58,7 @@
       H: { label: 'HAIN JI?', caption: 'Hain Ji?! 🧐', speakHi: 'हैं जी?', asset: 'az_h' },
       I: { label: 'MODI JI!', caption: 'Narendra Modi! 🤩', speakHi: 'नरेंद्र मोदी!', asset: 'az_i' },
       J: { label: 'JALDI HATO', caption: 'Jaldi Wahan Se Hato! 🏃', speakHi: 'जल्दी वहाँ से हटो!', asset: 'az_j' },
-      K: { label: 'KYA BAAT!', caption: 'Kya Baat Hai Boss! 💰🔥', speakHi: 'क्या बात है बॉस!', asset: 'az_k' },
+      K: { label: 'KYA BAAT!', caption: 'Kya Baat Hai Boss! 💰🔥', speakHi: 'क्या बात है बॉस!', fx: 'burst', asset: 'az_k' },
       L: { label: 'LE LE BETA', caption: 'Le Le Beta! 😂', speakHi: 'ले ले बेटा!', asset: 'az_l' },
       M: { label: 'MAAREGA!', caption: 'Maarega Mujhe! 🤕', speakHi: 'मारेगा मुझे!', asset: 'az_m' },
       N: { label: 'NAHI!', caption: 'Nahi! 🙅', speakHi: 'नहीं!', asset: 'az_n' },
@@ -226,14 +226,6 @@
     { text: 'Paisa barbaad benstocks!', emoji: '💸😭', key: 'P' }
   ];
 
-  const IMPOSSIBLE_TAUNTS = [
-    'NOPE!',
-    'TOO SLOW!',
-    'PAKAD KE DIKHA!',
-    'TRY AGAIN!',
-    'MISS HO GAYA!',
-    'EN GURU SLOW?'
-  ];
 
   /* ==================== 2. STATE & LOCALSTORAGE ==================== */
   const STORAGE_KEY = 'meme_machine_exe_v1';
@@ -252,20 +244,15 @@
     highScore: saved.highScore || 0,
     totalKeys: 0,
     totalMemes: 0,
-    combo: 0,
-    streak: 0,
-    highestCombo: 0,
     chaos: 0,
     maxChaos: 0,
     chaosActive: false,
     liveDemo: false,
-    impossibleAttempts: 0,
     secretsUnlocked: new Set(),
     pressedKeys: new Set(),
     keyCooldowns: new Map(),
     keySequence: [],
     spaceTimestamps: [],
-    comboTimer: null,
     chaosTimer: null
   };
 
@@ -295,10 +282,10 @@
     virtualKeyboard: document.getElementById('virtual-keyboard'),
     liveCaption: document.getElementById('live-caption'),
     djHypeMsg: document.getElementById('dj-hype-msg'),
-    statCombo: document.getElementById('stat-combo'),
-    statStreak: document.getElementById('stat-streak'),
-    statBest: document.getElementById('stat-best'),
-    statKeys: document.getElementById('stat-keys'),
+    statCombo: null,
+    statStreak: null,
+    statBest: null,
+    statKeys: null,
     chaosFill: document.getElementById('chaos-fill'),
     chaosPct: document.getElementById('chaos-pct'),
     chaosBtn: document.getElementById('chaos-btn'),
@@ -315,17 +302,17 @@
     reducedMotionBtn: document.getElementById('reduced-motion-btn'),
     fullscreenBtn: document.getElementById('fullscreen-btn'),
     resetPerfBtn: document.getElementById('reset-perf-btn'),
-    liveDemoBtn: document.getElementById('live-demo-btn'),
-    exitDemoBtn: document.getElementById('exit-demo-btn'),
-    judgeBanner: document.getElementById('judge-banner'),
-    endShowBtn: document.getElementById('end-show-btn'),
+    liveDemoBtn: null,
+    exitDemoBtn: null,
+    judgeBanner: null,
+    endShowBtn: null,
     enterUniverseBtn: document.getElementById('enter-universe-btn'),
-    randomMemeBtn: document.getElementById('random-meme-btn'),
-    randomMemeOutput: document.getElementById('random-meme-output'),
-    impossibleStage: document.getElementById('impossible-stage'),
-    impossibleBtn: document.getElementById('impossible-btn'),
-    impossibleAttempts: document.getElementById('impossible-attempts'),
-    impossibleStatus: document.getElementById('impossible-status'),
+    randomMemeBtn: null,
+    randomMemeOutput: null,
+    impossibleStage: null,
+    impossibleBtn: null,
+    impossibleAttempts: null,
+    impossibleStatus: null,
     finalKeys: document.getElementById('final-keys'),
     finalMemes: document.getElementById('final-memes'),
     finalCombo: document.getElementById('final-combo'),
@@ -839,7 +826,7 @@
     for (let i = 0; i < bars; i++) {
       const val = (analyser && state.soundEnabled && freqData)
         ? freqData[i % freqData.length] / 255
-        : (state.combo > 0 ? Math.random() * 0.45 : 0.08);
+        : 0.08;
       const h = Math.max(3, val * (el.beatCanvas.height - 4));
       beatCtx.fillStyle = i % 2 === 0 ? NEON.cyan : NEON.pink;
       beatCtx.fillRect(i * bw + 2, el.beatCanvas.height - h, bw - 4, h);
@@ -945,6 +932,11 @@
         spawnCanvasBurst(NEON.green, 24, el.bgCanvas.width * 0.7, el.bgCanvas.height * 0.35);
         break;
       case 'kannada': {
+        if (state.lang !== 'kn') {
+          spawnCanvasBurst(meta.color || NEON.yellow, 24);
+          spawnFlyingEmojis('💰🔥⚡', 10);
+          break;
+        }
         const d = document.createElement('div');
         d.className = 'fx-comic-box';
         d.textContent = 'ಏನ್ ಗುರು ಇದು?! 😎';
@@ -1114,19 +1106,10 @@
   }
 
   function updateDjHype() {
-    let msg = 'DROPPING FRESH MEMES';
-    if (state.combo >= 25) msg = 'WARNING: TOO MUCH MEME ENERGY!';
-    else if (state.combo >= 15) msg = 'NEIGHBOURS ARE CONFUSED!';
-    else if (state.combo >= 10) msg = 'THIS DJ HAS NO CONTROL!';
-    else if (state.combo >= 5) msg = `MEME COMBO x${state.combo}!`;
-    el.djHypeMsg.textContent = msg;
+    el.djHypeMsg.textContent = 'DROPPING FRESH MEMES';
   }
 
   function updateStatsUI() {
-    el.statCombo.textContent = `x${state.combo}`;
-    el.statStreak.textContent = String(state.streak);
-    el.statBest.textContent = `x${state.highScore}`;
-    el.statKeys.textContent = String(state.totalKeys);
     el.chaosFill.style.width = `${state.chaos}%`;
     el.chaosPct.textContent = `${state.chaos}%`;
   }
@@ -1158,23 +1141,9 @@
       setTimeout(() => btn.classList.remove('active'), 150);
     }
 
-    // Update stats & combo
+    // Update stats
     state.totalKeys++;
     state.totalMemes++;
-    state.combo++;
-    state.streak++;
-    if (state.combo > state.highestCombo) state.highestCombo = state.combo;
-    if (state.combo > state.highScore) {
-      state.highScore = state.combo;
-      savePrefs();
-    }
-
-    clearTimeout(state.comboTimer);
-    state.comboTimer = setTimeout(() => {
-      state.combo = 0;
-      updateDjHype();
-      updateStatsUI();
-    }, 2200);
 
     // Chaos boost
     if (state.chaosActive || state.mode === 'madness') {
@@ -1267,9 +1236,6 @@
   function resetPerformance() {
     state.totalKeys = 0;
     state.totalMemes = 0;
-    state.combo = 0;
-    state.streak = 0;
-    state.highestCombo = 0;
     state.maxChaos = 0;
     stopChaosMode();
     setChaos(0);
@@ -1277,43 +1243,7 @@
     updateStatsUI();
   }
 
-  /* ==================== 10. MINI-GAMES & NAVIGATION ==================== */
-  el.randomMemeBtn.addEventListener('click', () => {
-    const pick = RANDOM_MEMES[Math.floor(Math.random() * RANDOM_MEMES.length)];
-    el.randomMemeOutput.innerHTML = `<span class="rm-emoji">${pick.emoji}</span><span class="rm-text">"${pick.text}"</span>`;
-    const pickMeta = getKeyMeta(pick.key);
-    if (pickMeta) {
-      playKeySound(pickMeta);
-      spawnCanvasBurst(pickMeta.color, 18);
-    }
-  });
-
-  function dodgeImpossibleBtn() {
-    state.impossibleAttempts++;
-    el.impossibleAttempts.textContent = String(state.impossibleAttempts);
-    const stageRect = el.impossibleStage.getBoundingClientRect();
-    const btnRect = el.impossibleBtn.getBoundingClientRect();
-    const maxX = Math.max(10, stageRect.width - btnRect.width - 12);
-    const maxY = Math.max(10, stageRect.height - btnRect.height - 12);
-    const nx = 6 + Math.random() * maxX;
-    const ny = 6 + Math.random() * maxY;
-    el.impossibleBtn.style.transform = 'none';
-    el.impossibleBtn.style.left = `${nx}px`;
-    el.impossibleBtn.style.top = `${ny}px`;
-    el.impossibleBtn.textContent = IMPOSSIBLE_TAUNTS[Math.floor(Math.random() * IMPOSSIBLE_TAUNTS.length)];
-
-    if (state.impossibleAttempts >= 15) el.impossibleStatus.textContent = 'Legendary Persistence! 😂';
-    else if (state.impossibleAttempts >= 7) el.impossibleStatus.textContent = 'Pakad nahi paoge! 🏃';
-    else el.impossibleStatus.textContent = 'Too slow!';
-  }
-
-  el.impossibleBtn.addEventListener('mouseenter', dodgeImpossibleBtn);
-  el.impossibleBtn.addEventListener('pointerdown', (e) => {
-    e.preventDefault();
-    dodgeImpossibleBtn();
-  });
-
-  function switchScreen(target) {
+  /* ==================== 10. NAVIGATION ==================== */  function switchScreen(target) {
     [el.introScreen, el.stageScreen, el.finalScreen].forEach((s) => s.classList.remove('active'));
     target.classList.add('active');
   }
@@ -1331,14 +1261,6 @@
     switchScreen(el.stageScreen);
   });
 
-  el.endShowBtn.addEventListener('click', () => {
-    stopChaosMode();
-    el.finalKeys.textContent = String(state.totalKeys);
-    el.finalMemes.textContent = String(state.totalMemes);
-    el.finalCombo.textContent = `x${state.highestCombo}`;
-    el.finalChaos.textContent = `${state.maxChaos}%`;
-    switchScreen(el.finalScreen);
-  });
 
   el.playAgainBtn.addEventListener('click', () => {
     resetPerformance();
@@ -1400,14 +1322,6 @@
   el.resetPerfBtn.addEventListener('click', resetPerformance);
   el.chaosBtn.addEventListener('click', startChaosMode);
   el.exitChaosBtn.addEventListener('click', stopChaosMode);
-
-  function toggleLiveDemo(on) {
-    state.liveDemo = on;
-    document.body.classList.toggle('live-demo-active', on);
-    el.judgeBanner.classList.toggle('hidden', !on);
-  }
-  el.liveDemoBtn.addEventListener('click', () => toggleLiveDemo(!state.liveDemo));
-  el.exitDemoBtn.addEventListener('click', () => toggleLiveDemo(false));
 
   // Physical keyboard listener (safe: never overrides Ctrl/Alt/Meta/Tab/F-keys)
   window.addEventListener('keydown', (e) => {
