@@ -29,7 +29,7 @@
   for (const ch of 'abcdglt') {
     SOUND_ASSET_FILES[`az_${ch}`] = `assets/sounds/az/${ch}.mp4`;
   }
-  for (const ch of 'abcdefghijklmnopqrs') {
+  for (const ch of 'abcdefghijklmnoprst') {
     SOUND_ASSET_FILES[`kannaz_${ch}`] = `assets/sounds/kannaz/${ch}.mp3`;
   }
 
@@ -108,10 +108,10 @@
       N: { label: 'NAANU EN?', caption: 'ನಾನು ಏನ್ ಮಾಡಿದೆ?! 🥺👉👈', speak: 'Naanu yen maadide?', speakKn: 'ನಾನು ಏನ್ ಮಾಡಿದೆ?', asset: 'kannaz_n' },
       O: { label: 'OH GURU!', caption: 'ಓಹ್ ಗುರು! ಸೂಪರ್! ⚡', speak: 'Oh guru super!', speakKn: 'ಓಹ್ ಗುರು ಸೂಪರ್!', asset: 'kannaz_o' },
       P: { label: 'PAKKA LOCAL', caption: 'ಪಕ್ಕಾ ಲೋಕಲ್ ಬಾಸ್! 😎', speak: 'Pakka local boss!', speakKn: 'ಪಕ್ಕಾ ಲೋಕಲ್ ಬಾಸ್!', asset: 'kannaz_p' },
-      Q: { label: 'QUESTION?', caption: 'ಕ್ವೆಶ್ಚನ್ ಕೇಳ್ಬೇಡ ಗುರು! 🤫', speak: 'Question kelbeda guru!', speakKn: 'ಕ್ವೆಶ್ಚನ್ ಕೇಳ್ಬೇಡ ಗುರು!', asset: 'kannaz_q' },
+      Q: { label: 'QUESTION?', caption: 'ಕ್ವೆಶ್ಚನ್ ಕೇಳ್ಬೇಡ ಗುರು! 🤫', speak: 'Question kelbeda guru!', speakKn: 'ಕ್ವೆಶ್ಚನ್ ಕೇಳ್ಬೇಡ ಗುರು!', asset: null },
       R: { label: 'RIGHT HELDE', caption: 'ರೈಟ್ ಹೇಳ್ದೆ ಗುರು! ✅', speak: 'Right helde guru!', speakKn: 'ರೈಟ್ ಹೇಳ್ದೆ ಗುರು!', asset: 'kannaz_r' },
       S: { label: 'SADHU LAUGH', caption: 'ಸಾಧು ಕೋಕಿಲ ಲಾಫ್: ಹಹಹ! 😂🤣', speak: 'Ha ha ha! Yen comedy!', speakKn: 'ಹ ಹ ಹ! ಏನ್ ಕಾಮಿಡಿ!', asset: 'kannaz_s' },
-      T: { label: 'THAGO GURU', caption: 'ತಗೋ ಗುರು ಫುಲ್ ಪವರ್! 💥', speak: 'Thago guru!', speakKn: 'ತಗೋ ಗುರು!', asset: null },
+      T: { label: 'THAGO GURU', caption: 'ತಗೋ ಗುರು ಫುಲ್ ಪವರ್! 💥', speak: 'Thago guru!', speakKn: 'ತಗೋ ಗುರು!', asset: 'kannaz_t' },
       U: { label: 'ULTA PULTA', caption: 'ಉಲ್ಟಾ ಹೊಡೀತು ಬಾಸ್! 🙃', speak: 'Ulta hodeethu boss!', speakKn: 'ಉಲ್ಟಾ ಹೊಡೀತು ಬಾಸ್!', asset: null },
       V: { label: 'WOW SAKKATH', caption: 'ವಾವ್! ಸಕ್ಕತ್ ಡ್ಯಾನ್ಸ್! 🕺', speak: 'Wow sakkath!', speakKn: 'ವಾವ್ ಸಕ್ಕತ್!', asset: null },
       W: { label: 'WAIT MAADU', caption: 'ವೇಟ್ ಮಾಡು ಬಾಸ್! ✋', speak: 'Wait maadu boss!', speakKn: 'ವೇಟ್ ಮಾಡು ಬಾಸ್!', asset: null },
