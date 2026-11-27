@@ -32,6 +32,9 @@
   for (const ch of 'abcdefghijklmnoprst') {
     SOUND_ASSET_FILES[`kannaz_${ch}`] = `assets/sounds/kannaz/${ch}.mp3`;
   }
+  for (const d of '012346789') {
+    SOUND_ASSET_FILES[`kannum_${d}`] = `assets/sounds/kannum/${d}.mp3`;
+  }
 
   // Language-specific A-Z meme packs (English / Hindi A-Z Short / Kannada)
   const LANG_PACKS = {
@@ -117,7 +120,16 @@
       W: { label: 'WAIT MAADU', caption: 'ವೇಟ್ ಮಾಡು ಬಾಸ್! ✋', speak: 'Wait maadu boss!', speakKn: 'ವೇಟ್ ಮಾಡು ಬಾಸ್!', asset: null },
       X: { label: 'EXTRA COMEDY', caption: 'ಎಕ್ಸ್‌ಟ್ರಾ ಕಾಮಿಡಿ ಗುರು! 🤣', speak: 'Extra comedy guru!', speakKn: 'ಎಕ್ಸ್‌ಟ್ರಾ ಕಾಮಿಡಿ ಗುರು!', asset: null },
       Y: { label: 'YAARO NEENU', caption: 'ಯಾರೋ ನೀನು?! 🤨', speak: 'Yaaro neenu?', speakKn: 'ಯಾರೋ ನೀನು?', asset: null },
-      Z: { label: 'JHAGAMAGA', caption: 'ಝಗಮಗ ಡಿಜೆ ನೈಟ್! 🪩✨', speak: 'Jhagamaga DJ night!', speakKn: 'ಝಗಮಗ ಡಿಜೆ ನೈಟ್!', asset: null }
+      Z: { label: 'JHAGAMAGA', caption: 'ಝಗಮಗ ಡಿಜೆ ನೈಟ್! 🪩✨', speak: 'Jhagamaga DJ night!', speakKn: 'ಝಗಮಗ ಡಿಜೆ ನೈಟ್!', asset: null },
+      '1': { label: 'ONDU ONDU', caption: '1: ಒಂದೇ ಒಂದು ಆಸೆ! 🎶', asset: 'kannum_1' },
+      '2': { label: 'ERADU JADE', caption: '2: ಎರಡು ಜಡೆಯನ್ನು ಎಳೆದು ಕೇಳು! 🎵', asset: 'kannum_2' },
+      '3': { label: 'MOORU PEG', caption: '3: ಮೂರೇ ಮೂರು ಪೆಗ್ಗಿಗೆ! 🍻', asset: 'kannum_3' },
+      '4': { label: 'NAAKU QTR', caption: '4: ನಾಕು ಕ್ವಾರ್ಟರ್ ಕುಡಿದ್ರು! 😎', asset: 'kannum_4' },
+      '6': { label: 'AARU VADDI', caption: '6: ಆರೇ ಆರು ವಡ್ಡಿ! 🥁', asset: 'kannum_6' },
+      '7': { label: 'ELU NOTE', caption: '7: ಏಳು ಏಳು! 🎵', asset: 'kannum_7' },
+      '8': { label: 'ENTU CENT', caption: '8: ಎಂಟಾಣೆ ಸೆಂಟು! 🔥', asset: 'kannum_8' },
+      '9': { label: 'OMBATTU', caption: '9: ಒಂಬತ್ತು! ⚡', asset: 'kannum_9' },
+      '0': { label: 'HATTU RUPAI', caption: '0: ಹತ್ತು ರೂಪಾಯಿಗೊಂದು! 🎉', asset: 'kannum_0' }
     }
   };
 
@@ -372,7 +384,7 @@
   }
 
   function playBuffer(name, rate = 1) {
-    const isAz = name.startsWith('az_') || name.startsWith('kannaz_');
+    const isAz = name.startsWith('az_') || name.startsWith('kannaz_') || name.startsWith('kannum_');
     // Stop any currently-playing A-Z clip so they don't stack
     if (isAz) {
       if (activeAzSource) { try { activeAzSource.stop(); } catch { /**/ } activeAzSource = null; }
@@ -656,7 +668,7 @@
     if (!state.soundEnabled) return;
     ensureAudioContext();
     const rate = state.mode === 'madness' ? 1.12 : state.mode === 'chill' ? 0.92 : 1.0;
-    if (meta.asset && (meta.asset.startsWith('az_') || meta.asset.startsWith('kannaz_'))) {
+    if (meta.asset && (meta.asset.startsWith('az_') || meta.asset.startsWith('kannaz_') || meta.asset.startsWith('kannum_'))) {
       if ('speechSynthesis' in window) {
         try { window.speechSynthesis.cancel(); } catch { /**/ }
       }
