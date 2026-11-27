@@ -29,6 +29,9 @@
   for (const ch of 'abcdglt') {
     SOUND_ASSET_FILES[`az_${ch}`] = `assets/sounds/az/${ch}.mp4`;
   }
+  for (const ch of 'abcdefghijklmnopqrstuv') {
+    SOUND_ASSET_FILES[`kannaz_${ch}`] = `assets/sounds/kannaz/${ch}.mp3`;
+  }
 
   // Language-specific A-Z meme packs (English / Hindi A-Z Short / Kannada)
   const LANG_PACKS = {
@@ -89,28 +92,28 @@
       Z: { label: 'ZOOMER', caption: 'ZOOMER ENERGY 9000! ⚡', speak: 'Zoomer energy!', asset: null }
     },
     kn: {
-      A: { label: 'AYYO PAAPA', caption: 'ಅಯ್ಯೋ ಪಾಪ! (Ayyo Paapa!) 🥺', speak: 'Ayyo paapaa!', speakKn: 'ಅಯ್ಯೋ ಪಾಪ!', asset: null },
-      B: { label: 'BISI IDLI', caption: 'ಬಿಸಿ ಬಿಸಿ ಇಡ್ಲಿ ಸಾಂಬಾರ್! 🍛', speak: 'Bisi bisi idli!', speakKn: 'ಬಿಸಿ ಬಿಸಿ ಇಡ್ಲಿ!', asset: null },
-      C: { label: 'CHILL MAADI', caption: 'ಚಿಲ್ ಮಾಡಿ ಬಾಸ್! 🧊😎', speak: 'Chill maadi boss!', speakKn: 'ಚಿಲ್ ಮಾಡಿ ಬಾಸ್!', asset: null },
-      D: { label: 'DHOKA GURU', caption: 'ಧೋಖಾ ಆಯ್ತು ಗುರು! 🎭', speak: 'Dhoka aaythu guru!', speakKn: 'ಧೋಖಾ ಆಯ್ತು ಗುರು!', asset: null },
-      E: { label: 'EN GURU?', caption: 'ಏನ್ ಗುರು ಇದು?! 😎💛❤️', speak: 'Yen guru idu?', speakKn: 'ಏನ್ ಗುರು ಇದು?', asset: null },
-      F: { label: 'FULL TIGHT', caption: 'ಫುಲ್ ಟೈಟ್ ಗುರು! 🔥', speak: 'Full tight guru!', speakKn: 'ಫುಲ್ ಟೈಟ್ ಗುರು!', asset: null },
-      G: { label: 'GURU SAKKATH', caption: 'ಗುರು, ಸಕ್ಕತ್ತಾಗಿದೆ! 🤩', speak: 'Guru sakkathagide!', speakKn: 'ಗುರು ಸಕ್ಕತ್ತಾಗಿದೆ!', asset: null },
-      H: { label: 'HOWDA HULI', caption: 'ಹೌದಾ ಹುಲಿಯಾ?! 🐯', speak: 'Howda huliya?', speakKn: 'ಹೌದಾ ಹುಲಿಯಾ?', asset: null },
-      I: { label: 'IDEN KATHE', caption: 'ಇದೇನ್ ಕಥೆ ಗುರು! 🤯', speak: 'Iden kathe guru!', speakKn: 'ಇದೇನ್ ಕಥೆ ಗುರು!', asset: null },
-      J: { label: 'JOLLY MAADU', caption: 'ಜಾಲಿ ಮಾಡು ಮಗಾ! 🎉', speak: 'Jolly maadu maga!', speakKn: 'ಜಾಲಿ ಮಾಡು ಮಗಾ!', asset: null },
-      K: { label: 'KANNADA!', caption: 'ನಮ್ಮ ಬೆಂಗಳೂರು ಕನ್ನಡ ಮೋಡ್! 💛❤️', speak: 'Namma Bengaluru Kannada mode!', speakKn: 'ನಮ್ಮ ಬೆಂಗಳೂರು ಕನ್ನಡ!', asset: null },
-      L: { label: 'LO BOSS!', caption: 'ಲೋ ಬಾಸ್, ಏನ್ ಮಾಡ್ತಿದೀಯಾ! 😂', speak: 'Lo boss yen madthidiya!', speakKn: 'ಲೋ ಬಾಸ್ ಏನ್ ಮಾಡ್ತಿದೀಯಾ!', asset: null },
-      M: { label: 'MAJA BANTHA', caption: 'ಮಜಾ ಬಂತಾ ಗುರು? 🥳', speak: 'Maja bantha guru?', speakKn: 'ಮಜಾ ಬಂತಾ ಗುರು?', asset: null },
-      N: { label: 'NAANU EN?', caption: 'ನಾನು ಏನ್ ಮಾಡಿದೆ?! 🥺👉👈', speak: 'Naanu yen maadide?', speakKn: 'ನಾನು ಏನ್ ಮಾಡಿದೆ?', asset: null },
-      O: { label: 'OH GURU!', caption: 'ಓಹ್ ಗುರು! ಸೂಪರ್! ⚡', speak: 'Oh guru super!', speakKn: 'ಓಹ್ ಗುರು ಸೂಪರ್!', asset: null },
-      P: { label: 'PAKKA LOCAL', caption: 'ಪಕ್ಕಾ ಲೋಕಲ್ ಬಾಸ್! 😎', speak: 'Pakka local boss!', speakKn: 'ಪಕ್ಕಾ ಲೋಕಲ್ ಬಾಸ್!', asset: null },
-      Q: { label: 'QUESTION?', caption: 'ಕ್ವೆಶ್ಚನ್ ಕೇಳ್ಬೇಡ ಗುರು! 🤫', speak: 'Question kelbeda guru!', speakKn: 'ಕ್ವೆಶ್ಚನ್ ಕೇಳ್ಬೇಡ ಗುರು!', asset: null },
-      R: { label: 'RIGHT HELDE', caption: 'ರೈಟ್ ಹೇಳ್ದೆ ಗುರು! ✅', speak: 'Right helde guru!', speakKn: 'ರೈಟ್ ಹೇಳ್ದೆ ಗುರು!', asset: null },
-      S: { label: 'SADHU LAUGH', caption: 'ಸಾಧು ಕೋಕಿಲ ಲಾಫ್: ಹಹಹ! 😂🤣', speak: 'Ha ha ha! Yen comedy!', speakKn: 'ಹ ಹ ಹ! ಏನ್ ಕಾಮಿಡಿ!', asset: 'laugh_track' },
-      T: { label: 'THAGO GURU', caption: 'ತಗೋ ಗುರು ಫುಲ್ ಪವರ್! 💥', speak: 'Thago guru!', speakKn: 'ತಗೋ ಗುರು!', asset: null },
-      U: { label: 'ULTA PULTA', caption: 'ಉಲ್ಟಾ ಹೊಡೀತು ಬಾಸ್! 🙃', speak: 'Ulta hodeethu boss!', speakKn: 'ಉಲ್ಟಾ ಹೊಡೀತು ಬಾಸ್!', asset: null },
-      V: { label: 'WOW SAKKATH', caption: 'ವಾವ್! ಸಕ್ಕತ್ ಡ್ಯಾನ್ಸ್! 🕺', speak: 'Wow sakkath!', speakKn: 'ವಾವ್ ಸಕ್ಕತ್!', asset: null },
+      A: { label: 'AYYO PAAPA', caption: 'ಅಯ್ಯೋ ಪಾಪ! (Ayyo Paapa!) 🥺', speak: 'Ayyo paapaa!', speakKn: 'ಅಯ್ಯೋ ಪಾಪ!', asset: 'kannaz_a' },
+      B: { label: 'BISI IDLI', caption: 'ಬಿಸಿ ಬಿಸಿ ಇಡ್ಲಿ ಸಾಂಬಾರ್! 🍛', speak: 'Bisi bisi idli!', speakKn: 'ಬಿಸಿ ಬಿಸಿ ಇಡ್ಲಿ!', asset: 'kannaz_b' },
+      C: { label: 'CHILL MAADI', caption: 'ಚಿಲ್ ಮಾಡಿ ಬಾಸ್! 🧊😎', speak: 'Chill maadi boss!', speakKn: 'ಚಿಲ್ ಮಾಡಿ ಬಾಸ್!', asset: 'kannaz_c' },
+      D: { label: 'DHOKA GURU', caption: 'ಧೋಖಾ ಆಯ್ತು ಗುರು! 🎭', speak: 'Dhoka aaythu guru!', speakKn: 'ಧೋಖಾ ಆಯ್ತು ಗುರು!', asset: 'kannaz_d' },
+      E: { label: 'EN GURU?', caption: 'ಏನ್ ಗುರು ಇದು?! 😎💛❤️', speak: 'Yen guru idu?', speakKn: 'ಏನ್ ಗುರು ಇದು?', asset: 'kannaz_e' },
+      F: { label: 'FULL TIGHT', caption: 'ಫುಲ್ ಟೈಟ್ ಗುರು! 🔥', speak: 'Full tight guru!', speakKn: 'ಫುಲ್ ಟೈಟ್ ಗುರು!', asset: 'kannaz_f' },
+      G: { label: 'GURU SAKKATH', caption: 'ಗುರು, ಸಕ್ಕತ್ತಾಗಿದೆ! 🤩', speak: 'Guru sakkathagide!', speakKn: 'ಗುರು ಸಕ್ಕತ್ತಾಗಿದೆ!', asset: 'kannaz_g' },
+      H: { label: 'HOWDA HULI', caption: 'ಹೌದಾ ಹುಲಿಯಾ?! 🐯', speak: 'Howda huliya?', speakKn: 'ಹೌದಾ ಹುಲಿಯಾ?', asset: 'kannaz_h' },
+      I: { label: 'IDEN KATHE', caption: 'ಇದೇನ್ ಕಥೆ ಗುರು! 🤯', speak: 'Iden kathe guru!', speakKn: 'ಇದೇನ್ ಕಥೆ ಗುರು!', asset: 'kannaz_i' },
+      J: { label: 'JOLLY MAADU', caption: 'ಜಾಲಿ ಮಾಡು ಮಗಾ! 🎉', speak: 'Jolly maadu maga!', speakKn: 'ಜಾಲಿ ಮಾಡು ಮಗಾ!', asset: 'kannaz_j' },
+      K: { label: 'KANNADA!', caption: 'ನಮ್ಮ ಬೆಂಗಳೂರು ಕನ್ನಡ ಮೋಡ್! 💛❤️', speak: 'Namma Bengaluru Kannada mode!', speakKn: 'ನಮ್ಮ ಬೆಂಗಳೂರು ಕನ್ನಡ!', asset: 'kannaz_k' },
+      L: { label: 'LO BOSS!', caption: 'ಲೋ ಬಾಸ್, ಏನ್ ಮಾಡ್ತಿದೀಯಾ! 😂', speak: 'Lo boss yen madthidiya!', speakKn: 'ಲೋ ಬಾಸ್ ಏನ್ ಮಾಡ್ತಿದೀಯಾ!', asset: 'kannaz_l' },
+      M: { label: 'MAJA BANTHA', caption: 'ಮಜಾ ಬಂತಾ ಗುರು? 🥳', speak: 'Maja bantha guru?', speakKn: 'ಮಜಾ ಬಂತಾ ಗುರು?', asset: 'kannaz_m' },
+      N: { label: 'NAANU EN?', caption: 'ನಾನು ಏನ್ ಮಾಡಿದೆ?! 🥺👉👈', speak: 'Naanu yen maadide?', speakKn: 'ನಾನು ಏನ್ ಮಾಡಿದೆ?', asset: 'kannaz_n' },
+      O: { label: 'OH GURU!', caption: 'ಓಹ್ ಗುರು! ಸೂಪರ್! ⚡', speak: 'Oh guru super!', speakKn: 'ಓಹ್ ಗುರು ಸೂಪರ್!', asset: 'kannaz_o' },
+      P: { label: 'PAKKA LOCAL', caption: 'ಪಕ್ಕಾ ಲೋಕಲ್ ಬಾಸ್! 😎', speak: 'Pakka local boss!', speakKn: 'ಪಕ್ಕಾ ಲೋಕಲ್ ಬಾಸ್!', asset: 'kannaz_p' },
+      Q: { label: 'QUESTION?', caption: 'ಕ್ವೆಶ್ಚನ್ ಕೇಳ್ಬೇಡ ಗುರು! 🤫', speak: 'Question kelbeda guru!', speakKn: 'ಕ್ವೆಶ್ಚನ್ ಕೇಳ್ಬೇಡ ಗುರು!', asset: 'kannaz_q' },
+      R: { label: 'RIGHT HELDE', caption: 'ರೈಟ್ ಹೇಳ್ದೆ ಗುರು! ✅', speak: 'Right helde guru!', speakKn: 'ರೈಟ್ ಹೇಳ್ದೆ ಗುರು!', asset: 'kannaz_r' },
+      S: { label: 'SADHU LAUGH', caption: 'ಸಾಧು ಕೋಕಿಲ ಲಾಫ್: ಹಹಹ! 😂🤣', speak: 'Ha ha ha! Yen comedy!', speakKn: 'ಹ ಹ ಹ! ಏನ್ ಕಾಮಿಡಿ!', asset: 'kannaz_s' },
+      T: { label: 'THAGO GURU', caption: 'ತಗೋ ಗುರು ಫುಲ್ ಪವರ್! 💥', speak: 'Thago guru!', speakKn: 'ತಗೋ ಗುರು!', asset: 'kannaz_t' },
+      U: { label: 'ULTA PULTA', caption: 'ಉಲ್ಟಾ ಹೊಡೀತು ಬಾಸ್! 🙃', speak: 'Ulta hodeethu boss!', speakKn: 'ಉಲ್ಟಾ ಹೊಡೀತು ಬಾಸ್!', asset: 'kannaz_u' },
+      V: { label: 'WOW SAKKATH', caption: 'ವಾವ್! ಸಕ್ಕತ್ ಡ್ಯಾನ್ಸ್! 🕺', speak: 'Wow sakkath!', speakKn: 'ವಾವ್ ಸಕ್ಕತ್!', asset: 'kannaz_v' },
       W: { label: 'WAIT MAADU', caption: 'ವೇಟ್ ಮಾಡು ಬಾಸ್! ✋', speak: 'Wait maadu boss!', speakKn: 'ವೇಟ್ ಮಾಡು ಬಾಸ್!', asset: null },
       X: { label: 'EXTRA COMEDY', caption: 'ಎಕ್ಸ್‌ಟ್ರಾ ಕಾಮಿಡಿ ಗುರು! 🤣', speak: 'Extra comedy guru!', speakKn: 'ಎಕ್ಸ್‌ಟ್ರಾ ಕಾಮಿಡಿ ಗುರು!', asset: null },
       Y: { label: 'YAARO NEENU', caption: 'ಯಾರೋ ನೀನು?! 🤨', speak: 'Yaaro neenu?', speakKn: 'ಯಾರೋ ನೀನು?', asset: null },
@@ -369,7 +372,7 @@
   }
 
   function playBuffer(name, rate = 1) {
-    const isAz = name.startsWith('az_');
+    const isAz = name.startsWith('az_') || name.startsWith('kannaz_');
     // Stop any currently-playing A-Z clip so they don't stack
     if (isAz) {
       if (activeAzSource) { try { activeAzSource.stop(); } catch { /**/ } activeAzSource = null; }
@@ -653,7 +656,7 @@
     if (!state.soundEnabled) return;
     ensureAudioContext();
     const rate = state.mode === 'madness' ? 1.12 : state.mode === 'chill' ? 0.92 : 1.0;
-    if (meta.asset && meta.asset.startsWith('az_')) {
+    if (meta.asset && (meta.asset.startsWith('az_') || meta.asset.startsWith('kannaz_'))) {
       if ('speechSynthesis' in window) {
         try { window.speechSynthesis.cancel(); } catch { /**/ }
       }
