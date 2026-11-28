@@ -48,30 +48,30 @@
   // Language-specific A-Z meme packs (English / Hindi A-Z Short / Kannada)
   const LANG_PACKS = {
     hi: {
-      A: { label: 'ARE BAAP RE', caption: 'Are Baap Re! 😱', speakHi: 'अरे बाप रे!', asset: 'az_a' },
+      A: { label: 'ARE BAAP RE', caption: 'Aaaammmi aare bacha le! 😱', speakHi: 'अरे बाप रे!', asset: 'az_a' },
       B: { label: 'BAIGAN!', caption: 'Baigan! 🍆', speakHi: 'बैंगन!', asset: 'az_b' },
-      C: { label: 'CHILL BRO', caption: 'Chalta Hai Yaar! 😎🔥', speakHi: 'चलता है यार!', asset: 'az_c' },
-      D: { label: 'DHOKA!', caption: 'Dhoka Ho Gaya! 🥁💥', speakHi: 'धोखा हो गया!', asset: 'az_d' },
-      E: { label: 'AAYEIN?', caption: 'Aayein?! 🤨', speakHi: 'आएँ?', asset: 'az_e' },
+      C: { label: 'CHILL BRO', caption: 'Chaaalooooooooo! 😎🔥', speakHi: 'चलता है यार!', asset: 'az_c' },
+      D: { label: 'DHOKA!', caption: 'Dum dum tadiyo! 🥁💥', speakHi: 'धोखा हो गया!', asset: 'az_d' },
+      E: { label: 'AAYEIN?', caption: 'Aare saaa?! 🤨', speakHi: 'आएँ?', asset: 'az_e' },
       F: { label: 'FAHHHH!', caption: 'FAHHHH! Full Power! ⚡🔥', speakHi: 'फाह!', asset: 'az_f' },
-      G: { label: 'GAJAB!', caption: 'Gajab Beizzati Hai! 😎', speakHi: 'गजब बेइज्जती है!', asset: 'az_g' },
-      H: { label: 'HAIN JI?', caption: 'Hain Ji?! 🧐', speakHi: 'हैं जी?', asset: 'az_h' },
+      G: { label: 'GAJAB!', caption: 'Ghachar ghachar ghachar! 😎', speakHi: 'गजब बेइज्जती है!', asset: 'az_g' },
+      H: { label: 'HAIN JI?', caption: 'Hire daiya?! 🧐', speakHi: 'हैं जी?', asset: 'az_h' },
       I: { label: 'MODI JI!', caption: 'Narendra Modi! 🤩', speakHi: 'नरेंद्र मोदी!', asset: 'az_i' },
       J: { label: 'JALDI HATO', caption: 'Jaldi Wahan Se Hato! 🏃', speakHi: 'जल्दी वहाँ से हटो!', asset: 'az_j' },
       K: { label: 'KYA BAAT!', caption: 'Kya Baat Hai Boss! 💰🔥', speakHi: 'क्या बात है बॉस!', fx: 'burst', asset: 'az_k' },
-      L: { label: 'LE LE BETA', caption: 'Le Le Beta! 😂', speakHi: 'ले ले बेटा!', asset: 'az_l' },
-      M: { label: 'MAAREGA!', caption: 'Maarega Mujhe! 🤕', speakHi: 'मारेगा मुझे!', asset: 'az_m' },
+      L: { label: 'LE LE BETA', caption: 'Lekin ye sala kar kya raha hai yaha pe! 😂', speakHi: 'ले ले बेटा!', asset: 'az_l' },
+      M: { label: 'MAAREGA!', caption: 'Maarega ta karan! 🤕', speakHi: 'मारेगा मुझे!', asset: 'az_m' },
       N: { label: 'NAHI!', caption: 'Nahi! 🙅', speakHi: 'नहीं!', asset: 'az_n' },
       O: { label: 'OH BHAI!', caption: 'Oh Bhai Maaro Mujhe! 🤯', speakHi: 'ओ भाई मारो मुझे!', asset: 'az_o' },
-      P: { label: 'SAMJHE?', caption: 'Samjhe Kya?! 🤔', speakHi: 'समझे क्या?', asset: 'az_p' },
-      Q: { label: 'KYA HUA?', caption: 'Kyun Kya Hua?! ❓', speakHi: 'क्यों क्या हुआ?', asset: 'az_q' },
+      P: { label: 'SAMJHE?', caption: 'Pyari samjhe gayi?! 🤔', speakHi: 'समझे क्या?', asset: 'az_p' },
+      Q: { label: 'KYA HUA?', caption: 'Kyun ye Kya Hua?! ❓', speakHi: 'क्यों क्या हुआ?', asset: 'az_q' },
       R: { label: 'RUKO ZARA', caption: 'Ruko Zara Sabar Karo! ✋', speakHi: 'रुको ज़रा सबर करो!', asset: 'az_r' },
       S: { label: 'SHABASH!', caption: 'Shabash Beta! 👏', speakHi: 'शाबाश बेटा!', asset: 'az_s' },
-      T: { label: 'TAUBA!', caption: 'Tauba Tauba! 🤦', speakHi: 'तौबा तौबा!', asset: 'az_t' },
-      U: { label: 'UTHA LE RE', caption: 'Utha Le Re Baba! 🙏', speakHi: 'उठा ले रे बाबा!', asset: 'az_u' },
-      V: { label: 'VIDEO KYUN', caption: 'Video Kyun Bana Raha Hai! 📹', speakHi: 'वीडियो क्यों बना रहा है!', asset: 'az_v' },
+      T: { label: 'TAUBA!', caption: 'Techonologya Techonologya! 🤦', speakHi: 'तौबा तौबा!', asset: 'az_t' },
+      U: { label: 'UTHA LE RE', caption: 'Utha utha ke patkunga! 🙏', speakHi: 'उठा ले रे बाबा!', asset: 'az_u' },
+      V: { label: 'VIDEO KYUN', caption: 'Video kahe Bana Raha Hoo! 📹', speakHi: 'वीडियो क्यों बना रहा है!', asset: 'az_v' },
       W: { label: 'WAH SCENE!', caption: 'Wah Kya Scene Hai! 🌟', speakHi: 'वाह क्या सीन है!', asset: 'az_w' },
-      X: { label: 'X-TREME!', caption: 'Mujhe Mat Puchho Bhai! 🤷💥', speakHi: 'मुझे मत पूछो भाई!', asset: 'az_x' },
+      X: { label: 'X-TREME!', caption: 'Mujhe nai pata hai Mat Puchho Bhai! 🤷💥', speakHi: 'मुझे मत पूछो भाई!', asset: 'az_x' },
       Y: { label: 'YE KYA HAI', caption: 'Ye Sab Kya Dekhna Pad Raha Hai! 😭', speakHi: 'ये सब क्या देखना पड़ रहा है!', asset: 'az_y' },
       Z: { label: 'CHIN TAPAK', caption: 'Chin Tapak Dum Dum! 🕺🔥', speakHi: 'चिन तपाक डम डम!', asset: 'az_z' },
       '1': { label: 'NO. 1 KAMINA', caption: '1: नंबर एक का कमीना है! 😤🔥', asset: 'hindnum_1' },
@@ -83,34 +83,6 @@
       '7': { label: '7 CRORE!', caption: '7: सात करोड़! 💰🔥', asset: 'hindnum_7' },
       '8': { label: 'AATA MAJHI', caption: '8: आता माझी सटकली! 🦁🔥', asset: 'hindnum_8' },
       '9': { label: '999-888-222', caption: '9: बस 10 नंबर हो गया! 📞😂', asset: 'hindnum_9' }
-    },
-    en: {
-      A: { label: 'AMONG US', caption: 'AMONG US?! SUS! 📮', speak: 'Among Us? That is sus!', asset: null },
-      B: { label: 'BRUH!', caption: 'BRUH MOMENT! 💀', speak: 'Bruh moment!', asset: null },
-      C: { label: 'NO CAP!', caption: 'HUGE CAP! 🧢', speak: 'Stop the cap!', asset: null },
-      D: { label: 'DAMN SON', caption: 'DAMN SON, WHERE DID YOU FIND THIS? 😎', speak: 'Damn son, where did you find this?', asset: null },
-      E: { label: 'EMOTIONAL', caption: 'EMOTIONAL DAMAGE! 💔', speak: 'Emotional damage!', asset: null },
-      F: { label: 'F IN CHAT', caption: 'PRESS F TO PAY RESPECTS! 🫡', speak: 'F in the chat!', asset: null },
-      G: { label: 'GG EZ', caption: 'GG EZ NO RE! 🎮', speak: 'G G easy!', asset: null },
-      H: { label: 'HOLD UP!', caption: 'HOLD UP, WAIT A MINUTE! ✋', speak: 'Hold up, wait a minute!', asset: null },
-      I: { label: 'BIG BRAIN', caption: 'IT IS BIG BRAIN TIME! 🧠', speak: 'Big brain time!', asset: null },
-      J: { label: 'JUST DO IT', caption: 'JUST DO IT! 🔥', speak: 'Just do it!', asset: null },
-      K: { label: 'KAREN!', caption: 'KAREN WANTS THE MANAGER! 📢', speak: 'Karen detected!', asset: null },
-      L: { label: 'LET HIM COOK', caption: 'LET HIM COOK! 👨‍🍳🔥', speak: 'Let him cook!', asset: null },
-      M: { label: 'MISSION FAIL', caption: 'MISSION FAILED, NEXT TIME! 🎯', speak: 'Mission failed, we will get them next time!', asset: null },
-      N: { label: 'NO PLEASE', caption: 'NO GOD PLEASE NO! 😱', speak: 'No god, please no!', asset: null },
-      O: { label: 'OH TRIPLE!', caption: 'OH BABY A TRIPLE! 🎯', speak: 'Oh baby a triple!', asset: null },
-      P: { label: 'PLOT TWIST', caption: 'PLOT TWIST! 🎭', speak: 'Plot twist!', asset: null },
-      Q: { label: 'QUIT PLAYIN', caption: 'QUIT PLAYING BRO! 🤨', speak: 'Quit playing!', asset: null },
-      R: { label: 'RICKROLL', caption: 'NEVER GONNA GIVE YOU UP! 🕺', speak: 'You just got rickrolled!', asset: null },
-      S: { label: 'SKILL ISSUE', caption: 'MAJOR SKILL ISSUE! 💀', speak: 'Skill issue!', asset: null },
-      T: { label: 'TO BE CONT', caption: 'TO BE CONTINUED... 🎸', speak: 'To be continued!', asset: null },
-      U: { label: 'UNO REVERSE', caption: 'UNO REVERSE CARD! 🔄', speak: 'Uno reverse card!', asset: null },
-      V: { label: 'VIBE CHECK', caption: 'VIBE CHECK PASSED! 🎶', speak: 'Vibe check passed!', asset: null },
-      W: { label: 'WHAT R THOSE', caption: 'WHAT ARE THOSE?! 👟', speak: 'What are those?', asset: null },
-      X: { label: 'X DOUBT', caption: 'PRESS X TO DOUBT! 🕵️', speak: 'Press X to doubt!', asset: null },
-      Y: { label: 'YEET!', caption: 'YEEEEET! 🚀', speak: 'Yeet!', asset: null },
-      Z: { label: 'ZOOMER', caption: 'ZOOMER ENERGY 9000! ⚡', speak: 'Zoomer energy!', asset: null }
     },
     kn: {
       A: { label: 'AYYO PAAPA', caption: 'ಅಯ್ಯೋ ಪಾಪ! (Ayyo Paapa!) 🥺', speak: 'Ayyo paapaa!', speakKn: 'ಅಯ್ಯೋ ಪಾಪ!', asset: 'kannaz_a' },
@@ -367,7 +339,7 @@
       preloadAudioAssets();
     }
     if (audioCtx.state === 'suspended') {
-      audioCtx.resume().catch(() => {});
+      audioCtx.resume().catch(() => { });
     }
     return audioCtx;
   }
@@ -429,7 +401,7 @@
         target.volume = Math.min(1, state.volume * (isAz ? 1.0 : 0.85));
         target.playbackRate = rate;
         if (isAz) activeAzHtmlAudio = target;
-        target.play().catch(() => {});
+        target.play().catch(() => { });
         return true;
       } catch { /* fall through to synth */ }
     }
@@ -992,7 +964,7 @@
     const base = KEY_MAP[keyName];
     if (!base) return null;
     const pack = LANG_PACKS[state.lang]?.[keyName];
-    return pack ? { ...base, ...pack } : base;
+    return pack ? { ...base, emoji: '', ...pack } : base;
   }
 
   function applyLanguage(lang, announce = true) {
@@ -1012,7 +984,7 @@
       const names = { en: '🇬🇧 ENGLISH MEMES', hi: '🇮🇳 HINDI A-Z MEMES', kn: '💛❤️ KANNADA MEMES' };
       showToast('🌐 LANGUAGE SWITCHED', `${names[lang]} activated!`);
     }
-  }  const keyButtons = new Map();
+  } const keyButtons = new Map();
 
   function displayKeyText(k) {
     if (k === ' ') return 'SPACE';
@@ -1157,7 +1129,7 @@
     el.liveCaption.innerHTML = `
       <span class="caption-key" style="border-color:${displayMeta.color};color:${displayMeta.color}">${displayKeyText(keyName)}</span>
       <span class="caption-text">${displayMeta.caption}</span>
-      <span class="caption-emoji">${displayMeta.emoji}</span>
+      ${displayMeta.emoji ? `<span class="caption-emoji">${displayMeta.emoji}</span>` : ''}
     `;
     el.liveCaption.classList.remove('pop');
     void el.liveCaption.offsetWidth;
@@ -1313,9 +1285,9 @@
 
   el.fullscreenBtn.addEventListener('click', () => {
     if (!document.fullscreenElement) {
-      document.documentElement.requestFullscreen?.().catch(() => {});
+      document.documentElement.requestFullscreen?.().catch(() => { });
     } else {
-      document.exitFullscreen?.().catch(() => {});
+      document.exitFullscreen?.().catch(() => { });
     }
   });
 
