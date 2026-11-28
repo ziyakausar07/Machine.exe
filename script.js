@@ -310,7 +310,7 @@
     for (const [name, url] of Object.entries(SOUND_ASSET_FILES)) {
       try {
         const a = new Audio(url);
-        a.preload = 'auto';
+        a.preload = 'none';
         htmlAudioPool.set(name, a);
       } catch { /* ignore */ }
     }
